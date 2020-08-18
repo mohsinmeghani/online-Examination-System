@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="OES_DAL">
+  <DataContextMoniker Name="/OES_DALDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3ac14ddd-4e34-4497-b7dc-7f0fd47e83ae" absoluteBounds="3.25, 2.75, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/OES_DALDataContext/db_user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7b36b54-0a42-44a8-b047-c21209c8fbfa" absoluteBounds="3.265, 3.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
