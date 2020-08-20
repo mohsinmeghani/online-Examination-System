@@ -1,6 +1,0 @@
-C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\OES_BAL\bin\Debug\OES_BAL.dll.config
-C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\OES_BAL\bin\Debug\OES_BAL.dll
-C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\OES_BAL\bin\Debug\OES_BAL.pdb
-C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\OES_BAL\obj\Debug\OES_BAL.csprojResolveAssemblyReference.cache
-C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\OES_BAL\obj\Debug\OES_BAL.dll
-C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\OES_BAL\obj\Debug\OES_BAL.pdb
