@@ -33,6 +33,9 @@ namespace OES_BAL
     partial void Insertdb_user(db_user instance);
     partial void Updatedb_user(db_user instance);
     partial void Deletedb_user(db_user instance);
+    partial void Insertdb_program(db_program instance);
+    partial void Updatedb_program(db_program instance);
+    partial void Deletedb_program(db_program instance);
     #endregion
 		
 		public OES_DALDataContext() : 
@@ -70,6 +73,14 @@ namespace OES_BAL
 			get
 			{
 				return this.GetTable<db_user>();
+			}
+		}
+		
+		internal System.Data.Linq.Table<db_program> db_programs
+		{
+			get
+			{
+				return this.GetTable<db_program>();
 			}
 		}
 	}
@@ -447,6 +458,140 @@ namespace OES_BAL
 					this._is_firstLogin = value;
 					this.SendPropertyChanged("is_firstLogin");
 					this.Onis_firstLoginChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.program")]
+	internal partial class db_program : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _program_id;
+		
+		private string _program_code;
+		
+		private string _program_name;
+		
+		private string _program_details;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onprogram_idChanging(int value);
+    partial void Onprogram_idChanged();
+    partial void Onprogram_codeChanging(string value);
+    partial void Onprogram_codeChanged();
+    partial void Onprogram_nameChanging(string value);
+    partial void Onprogram_nameChanged();
+    partial void Onprogram_detailsChanging(string value);
+    partial void Onprogram_detailsChanged();
+    #endregion
+		
+		public db_program()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_program_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int program_id
+		{
+			get
+			{
+				return this._program_id;
+			}
+			set
+			{
+				if ((this._program_id != value))
+				{
+					this.Onprogram_idChanging(value);
+					this.SendPropertyChanging();
+					this._program_id = value;
+					this.SendPropertyChanged("program_id");
+					this.Onprogram_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_program_code", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string program_code
+		{
+			get
+			{
+				return this._program_code;
+			}
+			set
+			{
+				if ((this._program_code != value))
+				{
+					this.Onprogram_codeChanging(value);
+					this.SendPropertyChanging();
+					this._program_code = value;
+					this.SendPropertyChanged("program_code");
+					this.Onprogram_codeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_program_name", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string program_name
+		{
+			get
+			{
+				return this._program_name;
+			}
+			set
+			{
+				if ((this._program_name != value))
+				{
+					this.Onprogram_nameChanging(value);
+					this.SendPropertyChanging();
+					this._program_name = value;
+					this.SendPropertyChanged("program_name");
+					this.Onprogram_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_program_details", DbType="VarChar(MAX)")]
+		public string program_details
+		{
+			get
+			{
+				return this._program_details;
+			}
+			set
+			{
+				if ((this._program_details != value))
+				{
+					this.Onprogram_detailsChanging(value);
+					this.SendPropertyChanging();
+					this._program_details = value;
+					this.SendPropertyChanged("program_details");
+					this.Onprogram_detailsChanged();
 				}
 			}
 		}

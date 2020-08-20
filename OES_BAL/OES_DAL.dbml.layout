@@ -2,10 +2,16 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="OES_DAL">
   <DataContextMoniker Name="/OES_DALDataContext" />
   <nestedChildShapes>
-    <classShape Id="3ac14ddd-4e34-4497-b7dc-7f0fd47e83ae" absoluteBounds="3.25, 2.75, 2, 3.6939111328124996">
+    <classShape Id="3ac14ddd-4e34-4497-b7dc-7f0fd47e83ae" absoluteBounds="1.25, 2.75, 2, 3.6939111328124996">
       <DataClassMoniker Name="/OES_DALDataContext/db_user" />
       <nestedChildShapes>
-        <elementListCompartment Id="a7b36b54-0a42-44a8-b047-c21209c8fbfa" absoluteBounds="3.265, 3.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a7b36b54-0a42-44a8-b047-c21209c8fbfa" absoluteBounds="1.2650000000000001, 3.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c9df0b4-5dac-4ceb-886d-c6b9db03da3b" absoluteBounds="4, 2.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/OES_DALDataContext/db_program" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca425a1d-76f1-4e9f-b52a-ef24a68060ca" absoluteBounds="4.015, 3.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

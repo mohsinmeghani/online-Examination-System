@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OES_BAL
 {
-    public class User
+     public class User
     {
         public int ID { get; set; }
         public String FirstName { get; set; }
@@ -73,12 +73,24 @@ namespace OES_BAL
         {
             List<User> list = new List<User>();
              var context = new OES_DALDataContext();
-             var rs = (from u in context.db_users
-                       select u.user_id);
-             foreach (var userID in rs)
+             var users = (from u in context.db_users
+                       select u);
+             foreach (var user in users)
              {
-                 var obj_user = Get(userID);
-                 list.Add(obj_user);
+                 var u = new User();
+                 u.ID = user.user_id;
+                 u.FirstName = user.first_name;
+                 u.LastName = user.last_name;
+                 u.UserName = user.user_name;
+                 u.Email = user.user_email;
+                 u.Address = user.user_address;
+                 u.Gender = user.user_gender;
+                 u.Email = user.user_email;
+                 u.Contact = user.user_contact;
+                 u.CreatedBy = user.created_by;
+                 u.CreateWhen = (DateTime)user.created_when;
+
+                 list.Add(u);
              }
              return list;
              

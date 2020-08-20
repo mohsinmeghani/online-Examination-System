@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Course.cs" />
+    <Compile Include="OES_DAL.cs">
+      <DependentUpon>OES_DAL.dbml</DependentUpon>
+    </Compile>
     <Compile Include="OES_DAL.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
