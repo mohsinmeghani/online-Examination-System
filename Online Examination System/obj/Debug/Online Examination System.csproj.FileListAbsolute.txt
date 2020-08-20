@@ -49,3 +49,55 @@ C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination Sys
 C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\Online Examination System\obj\Debug\Online Examination System.csprojResolveAssemblyReference.cache
 C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\Online Examination System\obj\Debug\Online Examination System.dll
 C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\Online Examination System\obj\Debug\Online Examination System.pdb
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Online Examination System.dll.config
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Online Examination System.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Online Examination System.pdb
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Antlr3.Runtime.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\AspNet.ScriptManager.bootstrap.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\AspNet.ScriptManager.jQuery.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\EntityFramework.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\EntityFramework.SqlServer.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.AspNet.FriendlyUrls.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.AspNet.Identity.Core.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.Cookies.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.Facebook.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.Google.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.OAuth.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.Twitter.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.ScriptManager.MSAjax.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.ScriptManager.WebForms.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Web.Infrastructure.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Newtonsoft.Json.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\OES_BAL.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Owin.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\System.Web.Optimization.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\System.Web.Providers.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\WebGrease.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\System.Web.Optimization.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Antlr3.Runtime.pdb
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Newtonsoft.Json.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.AspNet.FriendlyUrls.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\EntityFramework.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\EntityFramework.SqlServer.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.AspNet.Identity.Core.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.Facebook.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.Cookies.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.Google.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.Twitter.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.OAuth.xml
+E:\DEV\GitHub\online-Examination-System\Online Examination System\obj\Debug\Online Examination System.csprojResolveAssemblyReference.cache
+E:\DEV\GitHub\online-Examination-System\Online Examination System\obj\Debug\Online Examination System.dll
+E:\DEV\GitHub\online-Examination-System\Online Examination System\obj\Debug\Online Examination System.pdb

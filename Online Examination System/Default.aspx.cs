@@ -26,6 +26,8 @@ namespace Online_Examination_System
             u.CreateWhen = DateTime.Now;
             u.EditedWhen = DateTime.Now;
             u.ADD();
+
+
         }
     }
 }

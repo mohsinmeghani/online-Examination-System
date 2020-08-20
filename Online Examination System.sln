@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Online Examination System", "Online Examination System\Online Examination System.csproj", "{DD0528B9-8077-4D94-941D-D195F598A588}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OES_BAL", "OES_BAL\OES_BAL.csproj", "{D6398051-D13E-407E-8268-9A8CCB309A43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{DD0528B9-8077-4D94-941D-D195F598A588}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD0528B9-8077-4D94-941D-D195F598A588}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD0528B9-8077-4D94-941D-D195F598A588}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6398051-D13E-407E-8268-9A8CCB309A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6398051-D13E-407E-8268-9A8CCB309A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6398051-D13E-407E-8268-9A8CCB309A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6398051-D13E-407E-8268-9A8CCB309A43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
