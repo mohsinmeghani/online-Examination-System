@@ -7,81 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Online_Examination_System.Account {
+namespace Online_Examination_System {
     
     
-    public partial class Login {
+    public partial class registration {
         
         /// <summary>
-        /// ErrorMessage control.
+        /// txt_username control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder ErrorMessage;
+        protected global::System.Web.UI.WebControls.TextBox txt_username;
         
         /// <summary>
-        /// FailureText control.
+        /// txt_firstname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal FailureText;
+        protected global::System.Web.UI.WebControls.TextBox txt_firstname;
         
         /// <summary>
-        /// Email control.
+        /// txt_lastname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Email;
+        protected global::System.Web.UI.WebControls.TextBox txt_lastname;
         
         /// <summary>
-        /// Password control.
+        /// txt_contact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password;
+        protected global::System.Web.UI.WebControls.TextBox txt_contact;
         
         /// <summary>
-        /// RememberMe control.
+        /// txt_email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox RememberMe;
+        protected global::System.Web.UI.WebControls.TextBox txt_email;
         
         /// <summary>
-        /// RegisterHyperLink control.
+        /// ddl_gender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink RegisterHyperLink;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_gender;
         
         /// <summary>
-        /// ForgotPasswordHyperLink control.
+        /// txt_password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink ForgotPasswordHyperLink;
+        protected global::System.Web.UI.WebControls.TextBox txt_password;
         
         /// <summary>
-        /// OpenAuthLogin control.
+        /// txt_confirmpassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Online_Examination_System.Account.OpenAuthProviders OpenAuthLogin;
+        protected global::System.Web.UI.WebControls.TextBox txt_confirmpassword;
     }
 }
