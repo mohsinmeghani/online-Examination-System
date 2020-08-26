@@ -102,3 +102,4 @@ E:\DEV\GitHub\online-Examination-System\Online Examination System\obj\Debug\Onli
 E:\DEV\GitHub\online-Examination-System\Online Examination System\obj\Debug\Online Examination System.dll
 E:\DEV\GitHub\online-Examination-System\Online Examination System\obj\Debug\Online Examination System.pdb
 C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\Online Examination System\bin\OES_BAL.dll
+C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\Online Examination System\bin\OES_BAL.pdb

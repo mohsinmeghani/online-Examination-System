@@ -11,8 +11,10 @@
                          <asp:Label runat="server" AssociatedControlID="txt_username" CssClass="col-md-2 control-label">Username</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox Name="txt_username" runat="server" ID="txt_username" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_username"
-                                CssClass="text-danger" ErrorMessage="The username field is required." />
+                           <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_username"
+                                CssClass="text-danger" ErrorMessage="The User Name field is required." />
+
+                            <asp:CustomValidator ID="validator_username" runat="server" ValidateEmptyText="false" ControlToValidate="txt_username" CssClass="text-danger" OnServerValidate="validator_username_ServerValidate" ErrorMessage="CustomValidator"></asp:CustomValidator>
                         </div>
                     </div>
                     <div class="form-group">
