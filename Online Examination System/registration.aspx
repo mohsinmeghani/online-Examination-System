@@ -1,11 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="registration.aspx.cs" Inherits="Online_Examination_System.registration" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="row">
         <div class="col-md-8">
             <section id="registrationForm">
                 <div class="form-horizontal">
-                    
+           
+                    <h4>User Registration Form</h4>
+                    <hr />
+                                    
                     <div class="form-group">
                         
                          <asp:Label runat="server" AssociatedControlID="txt_username" CssClass="col-md-2 control-label">Username</asp:Label>
@@ -21,7 +25,7 @@
                         
                          <asp:Label runat="server" AssociatedControlID="txt_firstname" CssClass="col-md-2 control-label">First Name</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox Name="txt_firstname" runat="server" ID="txt_firstname" CssClass="form-control" />
+                            <asp:TextBox name="txt_firstname" runat="server" ID="txt_firstname" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_firstname"
                                 CssClass="text-danger" ErrorMessage="The First Name field is required." />
                         </div>
@@ -29,7 +33,7 @@
                     <div class="form-group">
                          <asp:Label runat="server" AssociatedControlID="txt_lastname" CssClass="col-md-2 control-label">Last Name</asp:Label>                       
                         <div class="col-md-10">
-                            <asp:TextBox Name="txt_username" runat="server" ID="txt_lastname" CssClass="form-control" />
+                            <asp:TextBox runat="server" ID="txt_lastname" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_lastname"
                                 CssClass="text-danger" ErrorMessage="The Last Name field is required." />
                         </div>
@@ -37,7 +41,7 @@
                     <div class="form-group">
                          <asp:Label runat="server" AssociatedControlID="txt_contact" CssClass="col-md-2 control-label">Contact</asp:Label>                       
                         <div class="col-md-10">
-                            <asp:TextBox Name="txt_contact" runat="server" ID="txt_contact" CssClass="form-control" />
+                            <asp:TextBox runat="server" ID="txt_contact" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_contact"
                                 CssClass="text-danger" ErrorMessage="The Contact field is required." />
                         </div>
@@ -87,8 +91,33 @@
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button name="btn_register" runat="server" OnClick="Register" Text="Register" CssClass="btn btn-default" />
                         </div>
-
+                        </div>
+                    </div>
                </section>
+        </div>
+        <div class="col-md-4">
+            <section id="reg_form_gv">
+               
+                <div>  
+                <asp:DataGrid ID="Grid" runat="server" PageSize="5" AllowPaging="True" DataKeyField="EmpId" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" >  
+                    <Columns>  
+                        <asp:BoundColumn HeaderText="EmpId" DataField="EmpId"> </asp:BoundColumn>  
+                        <asp:BoundColumn HeaderText="F_Name" DataField="F_Name"> </asp:BoundColumn>  
+                        <asp:BoundColumn HeaderText="L_Name" DataField="L_Name"> </asp:BoundColumn>  
+                        <asp:BoundColumn DataField="City" HeaderText="City"> </asp:BoundColumn>  
+                        <asp:BoundColumn DataField="EmailId" HeaderText="EmailId"> </asp:BoundColumn>  
+                        <asp:BoundColumn DataField="EmpJoining" HeaderText="EmpJoining"> </asp:BoundColumn>  
+                        <asp:EditCommandColumn EditText="Edit" CancelText="Cancel" UpdateText="Update" HeaderText="Edit"> </asp:EditCommandColumn>  
+                        <asp:ButtonColumn CommandName="Delete" HeaderText="Delete" Text="Delete"> </asp:ButtonColumn>  
+                    </Columns>  
+                    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />  
+                    <SelectedItemStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />  
+                    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" Mode="NumericPages" />  
+                    <AlternatingItemStyle BackColor="White" />  
+                    <ItemStyle BackColor="#FFFBD6" ForeColor="#333333" />  
+                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" /> </asp:DataGrid>
+                    </div>
+            </section>
         </div>
 </div>
 </asp:Content>
