@@ -27,6 +27,9 @@ namespace Online_Examination_System.Account
             else
             {
                 //error
+                //Response.Write("Incorrect Username or Password!");
+                //ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('Invalid Username and Password')</script>");
+                lable_incorrect.Text = "Incorrect Username or Password";
             }
             
         }

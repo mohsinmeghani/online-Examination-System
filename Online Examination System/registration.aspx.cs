@@ -13,5 +13,10 @@ namespace Online_Examination_System
         {
 
         }
+
+        protected void Register(object sender, EventArgs e)
+        {
+
+        }
     }
 }

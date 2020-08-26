@@ -49,6 +49,15 @@ namespace Online_Examination_System.Account {
         protected global::System.Web.UI.WebControls.TextBox txt_password;
         
         /// <summary>
+        /// lable_incorrect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lable_incorrect;
+        
+        /// <summary>
         /// RememberMe control.
         /// </summary>
         /// <remarks>
@@ -56,15 +65,6 @@ namespace Online_Examination_System.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox RememberMe;
-        
-        /// <summary>
-        /// RegisterHyperLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink RegisterHyperLink;
         
         /// <summary>
         /// OpenAuthLogin control.

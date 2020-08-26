@@ -45,37 +45,46 @@
                         <div class="col-md-10">
                             <asp:TextBox Name="txt_email" runat="server" ID="txt_email" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_email"
-                                CssClass="text-danger" ErrorMessage="The Last Email is required." />
+                                CssClass="text-danger" ErrorMessage="The Email is required." />
                         </div>
                     </div>
                     <div class="form-group">
                          <asp:Label runat="server" AssociatedControlID="ddl_gender" CssClass="col-md-2 control-label">Gender</asp:Label>                       
                         <div class="col-md-5">
                          <asp:DropDownList runat="server" ID ="ddl_gender" runat="server" CssClass="form-control" >
+                             <asp:ListItem Value="">Please Select</asp:ListItem>  
                              <asp:ListItem>Male</asp:ListItem>
                              <asp:ListItem>Female</asp:ListItem>
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="ddl_gender"
-                                CssClass="text-danger" ErrorMessage="The Last gender is required." />
+                                CssClass="text-danger" ErrorMessage="The Gender is required." />
                         </div>
                     </div>
+              
                     
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="txt_password" CssClass="col-md-2 control-label">Password</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox name="txt_password" runat="server" ID="txt_password" TextMode="Password" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_password" CssClass="text-danger" ErrorMessage="The password field is required." />
+                            <asp:TextBox runat="server" ID="txt_password" TextMode="Password" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_password"
+                                CssClass="text-danger" ErrorMessage="The password field is required." />
                         </div>
-                        </div>
-                    <div class="form-group">
-                   
-                         <asp:Label runat="server" AssociatedControlID="txt_confirmpassword" CssClass="col-md-2 control-label"> Confirm Password</asp:Label>
-                        <div class="col-md-10">
-                            <asp:TextBox name="txt_confirmpassword" runat="server" ID="txt_confirmpassword" TextMode="Password" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_confirmpassword" CssClass="text-danger" ErrorMessage="The password field is required." />
-                        </div>
-                        
                     </div>
+                    <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="txt_confirmpassword" CssClass="col-md-2 control-label">Confirm password</asp:Label>
+                        <div class="col-md-10">
+                                <asp:TextBox runat="server" ID="txt_confirmpassword" TextMode="Password" CssClass="form-control" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_confirmpassword"
+                                CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." />
+                                <asp:CompareValidator runat="server" ControlToCompare="txt_password" ControlToValidate="txt_confirmpassword"
+                                CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:Button name="btn_register" runat="server" OnClick="Register" Text="Register" CssClass="btn btn-default" />
+                        </div>
 
                </section>
         </div>
