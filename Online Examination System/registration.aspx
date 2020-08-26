@@ -14,7 +14,7 @@
                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_username"
                                 CssClass="text-danger" ErrorMessage="The User Name field is required." />
 
-                            <asp:CustomValidator ID="validator_username" runat="server" ValidateEmptyText="false" ControlToValidate="txt_username" CssClass="text-danger" OnServerValidate="validator_username_ServerValidate" ErrorMessage="CustomValidator"></asp:CustomValidator>
+                            <asp:CustomValidator  ID="validator_username" runat="server" ValidateEmptyText="false" ControlToValidate="txt_username" CssClass="text-danger" OnServerValidate="validator_username_ServerValidate" ErrorMessage="CustomValidator"></asp:CustomValidator>
                         </div>
                     </div>
                     <div class="form-group">
