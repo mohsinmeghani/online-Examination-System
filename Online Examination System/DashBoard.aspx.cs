@@ -12,6 +12,17 @@ namespace Online_Examination_System
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["user"]!=null)
+            {
+               // var user = new  OES_BAL.User();
+                var user= (OES_BAL.User) Session["user"];
+                lbl_user.Text = user.FirstName+" "+user.LastName;
+
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
     }
 }

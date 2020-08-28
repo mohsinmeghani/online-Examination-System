@@ -68,7 +68,7 @@ namespace Online_Examination_System
 
         private bool ValidateUserName()
         {
-            OES_BAL.User u = new OES_BAL.User();
+            OES_BAL.Util u = new OES_BAL.Util();
 
             var username = txt_username.Text;
             if (u.IsUserNameExist(username))

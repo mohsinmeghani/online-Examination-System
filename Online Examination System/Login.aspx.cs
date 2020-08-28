@@ -19,41 +19,32 @@ namespace Online_Examination_System.Account
         protected void LogIn(object sender, EventArgs e)
         {
 
-            if (is_login())
-            {
-                Response.Redirect("DashBoard.aspx");
-                //redirect
-            }
-            else
-            {
-                //error
-                //Response.Write("Incorrect Username or Password!");
-                //ClientScript.RegisterStartupScript(Page.GetType(), "validation", "<script language='javascript'>alert('Invalid Username and Password')</script>");
-                lable_incorrect.Text = "Incorrect Username or Password";
-            }
-            
+            login();
         }
 
 
 
-        private bool is_login()
+        private void login()
         {
             OES_BAL.User u = new User();
             var username = txt_username.Text.Trim();
             var password = txt_password.Text;
 
-            if (string.IsNullOrEmpty(username)||string.IsNullOrEmpty(password))
+            try
             {
-             //errror   
+                var user = u.Login(username, password);
+                if (user!=null)
+                {
+                    Session["user"] = user;
+                    Response.Redirect("Dashboard.aspx");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                var is_login =u.Login(username, password);
-                return is_login;
+
+                lable_incorrect.Text = ex.Message;
             }
-
-            return false;
-
+           
         }
     }
 
