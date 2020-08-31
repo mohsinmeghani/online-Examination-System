@@ -11,7 +11,7 @@ namespace Online_Examination_System
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LoadGrid();
         }
 
         protected void Register(object sender, EventArgs e)
@@ -81,6 +81,15 @@ namespace Online_Examination_System
                 return true;
             }
            
+        }
+
+
+        private void LoadGrid()
+        {
+            OES_BAL.User u = new OES_BAL.User();
+            var users = u.GetAll();
+             GridView1.DataSource = users.Select(x=>new {x.ID,x.FirstName,x.LastName,x.UserName}).ToList();
+            GridView1.DataBind();
         }
     }
 }

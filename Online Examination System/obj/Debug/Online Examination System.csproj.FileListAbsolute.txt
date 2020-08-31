@@ -75,7 +75,6 @@ E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.
 E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.ScriptManager.WebForms.dll
 E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Microsoft.Web.Infrastructure.dll
 E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Newtonsoft.Json.dll
-E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\OES_BAL.dll
 E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\Owin.dll
 E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\System.Web.Optimization.dll
 E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\System.Web.Providers.dll
@@ -103,3 +102,4 @@ E:\DEV\GitHub\online-Examination-System\Online Examination System\obj\Debug\Onli
 E:\DEV\GitHub\online-Examination-System\Online Examination System\obj\Debug\Online Examination System.pdb
 C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\Online Examination System\bin\OES_BAL.dll
 C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\Online Examination System\bin\OES_BAL.pdb
+E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\OES_BAL.pdb
