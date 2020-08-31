@@ -101,6 +101,14 @@ function OnSuccess(response) {
                         </div>
                     </div>
                     <div class="form-group">
+                         <asp:Label runat="server" AssociatedControlID="txt_address" CssClass="col-md-2 control-label">Address</asp:Label>                       
+                        <div class="col-md-10">
+                            <asp:TextBox runat="server" ID="txt_address" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_address"
+                                CssClass="text-danger" ErrorMessage="The Contact field is required." />
+                        </div>
+                    </div>
+                    <div class="form-group">
                          <asp:Label runat="server" AssociatedControlID="txt_email" CssClass="col-md-2 control-label">Email</asp:Label>                       
                         <div class="col-md-10">
                             <asp:TextBox Name="txt_email" runat="server" ID="txt_email" CssClass="form-control" />
@@ -152,24 +160,23 @@ function OnSuccess(response) {
         <div class="col-md-4">
             <section id="reg_form_gv">
                
-                <div>  
-                <asp:DataGrid ID="Grid" runat="server" PageSize="5" AllowPaging="True" DataKeyField="EmpId" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" >  
-                    <Columns>  
-                        <asp:BoundColumn HeaderText="EmpId" DataField="EmpId"> </asp:BoundColumn>  
-                        <asp:BoundColumn HeaderText="F_Name" DataField="F_Name"> </asp:BoundColumn>  
-                        <asp:BoundColumn HeaderText="L_Name" DataField="L_Name"> </asp:BoundColumn>  
-                        <asp:BoundColumn DataField="City" HeaderText="City"> </asp:BoundColumn>  
-                        <asp:BoundColumn DataField="EmailId" HeaderText="EmailId"> </asp:BoundColumn>  
-                        <asp:BoundColumn DataField="EmpJoining" HeaderText="EmpJoining"> </asp:BoundColumn>  
-                        <asp:EditCommandColumn EditText="Edit" CancelText="Cancel" UpdateText="Update" HeaderText="Edit"> </asp:EditCommandColumn>  
-                        <asp:ButtonColumn CommandName="Delete" HeaderText="Delete" Text="Delete"> </asp:ButtonColumn>  
-                    </Columns>  
-                    <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />  
-                    <SelectedItemStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />  
-                    <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" Mode="NumericPages" />  
-                    <AlternatingItemStyle BackColor="White" />  
-                    <ItemStyle BackColor="#FFFBD6" ForeColor="#333333" />  
-                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" /> </asp:DataGrid>
+                <div> 
+
+                    <asp:GridView ID="gv_items" CssClass="table table-striped" runat="server" 
+                    AllowPaging="True" BorderStyle="None"
+                    onpageindexchanged="gv_items_PageIndexChanged" 
+                    onpageindexchanging="gv_items_PageIndexChanging" AllowSorting="True" 
+                    onsorting="gv_items_Sorting" AutoGenerateEditButton="false" 
+                    EnableModelValidation="True" onrowcancelingedit="gv_items_RowCancelingEdit" 
+                    onrowediting="gv_items_RowEditing" onrowupdating="gv_items_RowUpdating" 
+                    onselectedindexchanged="gv_items_SelectedIndexChanged">
+                    <Columns>
+                    <asp:HyperLinkField  DataTextField="ID" Text="EDIT"
+                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="items.aspx?acttype=edit&itmid={0}" />
+
+                    </Columns>
+                </asp:GridView>
+              
                     </div>
             </section>
         </div>
