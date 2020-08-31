@@ -10,7 +10,7 @@
 namespace Online_Examination_System {
     
     
-    public partial class registration {
+    public partial class UserSetup {
         
         /// <summary>
         /// txt_ID control.
@@ -67,6 +67,15 @@ namespace Online_Examination_System {
         protected global::System.Web.UI.WebControls.TextBox txt_contact;
         
         /// <summary>
+        /// txt_address control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_address;
+        
+        /// <summary>
         /// txt_email control.
         /// </summary>
         /// <remarks>
@@ -112,12 +121,12 @@ namespace Online_Examination_System {
         protected global::System.Web.UI.WebControls.Button btn_register;
         
         /// <summary>
-        /// Grid control.
+        /// gv_users control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid Grid;
+        protected global::System.Web.UI.WebControls.GridView gv_users;
     }
 }

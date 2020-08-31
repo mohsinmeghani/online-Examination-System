@@ -22,13 +22,22 @@ namespace Online_Examination_System {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
         
         /// <summary>
-        /// p_reg control.
+        /// p_program control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor p_reg;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor p_program;
+        
+        /// <summary>
+        /// p_user control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor p_user;
         
         /// <summary>
         /// MainContent control.

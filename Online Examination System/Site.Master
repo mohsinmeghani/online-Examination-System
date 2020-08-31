@@ -60,7 +60,8 @@
                         { %>
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Setup<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="Registration.aspx" id="p_reg" class="dropdown-item" runat="server">User Registeration</a></li>
+                            <li><a href="UserSetup.aspx" id="p_program" class="dropdown-item" runat="server">User Registeration</a></li>
+                            <li><a href="ProgramSetup.aspx" id="p_user" class="dropdown-item" runat="server">Program</a></li>
                         </ul>
                     </li>
 

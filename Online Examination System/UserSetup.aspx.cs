@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Online_Examination_System
 {
-    public partial class registration : System.Web.UI.Page
+    public partial class UserSetup : System.Web.UI.Page
     {
 
         public OES_BAL.User User { get; set; }
@@ -20,6 +20,7 @@ namespace Online_Examination_System
         protected void Page_Load(object sender, EventArgs e)
         {
             PageLoad();
+            LoadGrid();
         }
 
        
@@ -41,7 +42,7 @@ namespace Online_Examination_System
                     var username = txt_username.Text;
                     var email = txt_email.Text.Trim();
                     var contact = txt_contact.Text;
-                    var address = "Abc Road";
+                    var address = txt_address.Text;
                     var password = txt_confirmpassword.Text;
 
                     OES_BAL.User u = new OES_BAL.User();
@@ -80,7 +81,7 @@ namespace Online_Examination_System
                     var username = txt_username.Text;
                     var email = txt_email.Text.Trim();
                     var contact = txt_contact.Text;
-                    var address = "Abc Road";
+                    var address = txt_address.Text;
                     var password = txt_confirmpassword.Text;
 
                     OES_BAL.User u = new OES_BAL.User();
@@ -141,13 +142,14 @@ namespace Online_Examination_System
         {
             IsSuccess = true;
             LockControls();
+            LoadGrid();
         }
 
         private void LockControls()
         {
 
 
-             TextBox[] textboxes = { txt_confirmpassword,txt_contact,txt_email,txt_firstname,txt_lastname,txt_password,txt_username};
+             TextBox[] textboxes = { txt_confirmpassword,txt_contact,txt_email,txt_firstname,txt_lastname,txt_password,txt_username,txt_address};
              Button[] buttons = {btn_register };
              DropDownList[] dds = { ddl_gender};
             //disable Textboxes
@@ -207,6 +209,72 @@ namespace Online_Examination_System
         {
             IsError = true;
             ErrorMessage = message;
+        }
+
+
+        private void LoadGrid()
+        {
+            OES_BAL.User u = new OES_BAL.User();
+            var list = u.GetAll();
+            gv_users.DataSource = list.Select(x=>new {x.ID,x.UserName,x.FirstName,x.LastName}).ToList();
+            gv_users.DataBind();
+        }
+
+        private void LoadGrid(string SortExpression)
+        {
+            OES_BAL.User u = new OES_BAL.User();
+            var list = u.GetAll();
+            if (SortExpression=="ID")
+            {
+                list = list.OrderBy(x => x.ID).ToList();
+            }
+            else if (SortExpression=="UserName")
+            {
+                list = list.OrderBy(x => x.UserName).ToList();
+            }
+            else if (SortExpression == "FirstName")
+            {
+                list = list.OrderBy(x => x.FirstName).ToList();
+            }
+
+            gv_users.DataSource = list.Select(x => new { x.ID, x.UserName, x.FirstName, x.LastName }).ToList();
+            gv_users.DataBind();
+        }
+        protected void gv_users_PageIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void gv_users_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gv_users.PageIndex = e.NewPageIndex;
+            LoadGrid();
+        }
+
+        protected void gv_users_Sorting(object sender, GridViewSortEventArgs e)
+        {
+            LoadGrid(e.SortExpression);
+
+        }
+
+        protected void gv_users_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
+        }
+
+        protected void gv_users_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void gv_users_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+
+        }
+
+        protected void gv_users_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
         }
 
     }

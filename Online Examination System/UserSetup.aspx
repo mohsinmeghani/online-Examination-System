@@ -1,4 +1,4 @@
-﻿<%@ Page Title="User Registeration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="registration.aspx.cs" Inherits="Online_Examination_System.registration" %>
+﻿<%@ Page Title="User Registeration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserSetup.aspx.cs" Inherits="Online_Examination_System.UserSetup" %>
 
 <asp:Content ID="content2" ContentPlaceHolderID="HeadContent" runat="server">
     
@@ -162,19 +162,26 @@ function OnSuccess(response) {
                
                 <div> 
 
-                    <asp:GridView ID="gv_items" CssClass="table table-striped" runat="server" 
+                    <asp:GridView ID="gv_users" CssClass="table table-striped" runat="server" 
                     AllowPaging="True" BorderStyle="None"
-                    onpageindexchanged="gv_items_PageIndexChanged" 
-                    onpageindexchanging="gv_items_PageIndexChanging" AllowSorting="True" 
-                    onsorting="gv_items_Sorting" AutoGenerateEditButton="false" 
-                    EnableModelValidation="True" onrowcancelingedit="gv_items_RowCancelingEdit" 
-                    onrowediting="gv_items_RowEditing" onrowupdating="gv_items_RowUpdating" 
-                    onselectedindexchanged="gv_items_SelectedIndexChanged">
+                    onpageindexchanged="gv_users_PageIndexChanged" 
+                    onpageindexchanging="gv_users_PageIndexChanging" AllowSorting="True" 
+                    onsorting="gv_users_Sorting" onrowcancelingedit="gv_users_RowCancelingEdit" 
+                    onrowediting="gv_users_RowEditing" onrowupdating="gv_users_RowUpdating" 
+                    onselectedindexchanged="gv_users_SelectedIndexChanged" BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                     <asp:HyperLinkField  DataTextField="ID" Text="EDIT"
                      HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="items.aspx?acttype=edit&itmid={0}" />
 
                     </Columns>
+                        <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                        <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="Black" />
+                        <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                        <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                        <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                        <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                        <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
               
                     </div>

@@ -10,60 +10,60 @@
 namespace Online_Examination_System {
     
     
-    public partial class Program_Registration {
+    public partial class ProgramSetup {
         
         /// <summary>
-        /// txt_userid control.
+        /// txt_id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_userid;
+        protected global::System.Web.UI.WebControls.TextBox txt_id;
         
         /// <summary>
-        /// txt_username control.
+        /// txt_program_code control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_username;
+        protected global::System.Web.UI.WebControls.TextBox txt_program_code;
         
         /// <summary>
-        /// txt_firstname control.
+        /// txt_program_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_firstname;
+        protected global::System.Web.UI.WebControls.TextBox txt_program_name;
         
         /// <summary>
-        /// txt_lastname control.
+        /// txt_program_details control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_lastname;
+        protected global::System.Web.UI.WebControls.TextBox txt_program_details;
         
         /// <summary>
-        /// ddl_program control.
+        /// btn_save control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_program;
+        protected global::System.Web.UI.WebControls.Button btn_save;
         
         /// <summary>
-        /// gv_items control.
+        /// gv_program control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_items;
+        protected global::System.Web.UI.WebControls.GridView gv_program;
     }
 }
