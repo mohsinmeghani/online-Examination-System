@@ -1,4 +1,31 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="registration.aspx.cs" Inherits="Online_Examination_System.registration" %>
+﻿<%@ Page Title="User Registeration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="registration.aspx.cs" Inherits="Online_Examination_System.registration" %>
+
+<asp:Content ID="content2" ContentPlaceHolderID="HeadContent" runat="server">
+    
+    
+<script type = "text/javascript">
+    function checkUsername() {
+      
+        $.ajax({
+            type: "POST",
+            url: "registration.aspx/GetUserName",
+            data: '{u: "' + $("#<%=txt_username.ClientID%>")[0].value + '" }',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: OnSuccess,
+        failure: function (response) {
+            alert(response.d);
+        }
+    });
+}
+function OnSuccess(response) {
+    //alert(response.d);
+    $("#lbl_error").text("UserName Already Exist");
+}
+</script>
+
+</asp:Content>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -8,18 +35,45 @@
                 <div class="form-horizontal">
            
                     <h4>User Registration Form</h4>
+                    
+                   
                     <hr />
-                                    
-                    <div class="form-group">
-                        
-                         <asp:Label runat="server" AssociatedControlID="txt_username" CssClass="col-md-2 control-label">Username</asp:Label>
-                        <div class="col-md-10">
-                            <asp:TextBox Name="txt_username" runat="server" ID="txt_username" CssClass="form-control" />
-                           <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_username"
-                                CssClass="text-danger" ErrorMessage="The User Name field is required." />
-
-                            <asp:CustomValidator  ID="validator_username" runat="server" ValidateEmptyText="false" ControlToValidate="txt_username" CssClass="text-danger" OnServerValidate="validator_username_ServerValidate" ErrorMessage="CustomValidator"></asp:CustomValidator>
+                              
+                    <%
+                            if (IsSuccess)
+                            {
+                        %>
+                        <div class="alert alert-success">
+                            <strong>Success!</strong> User Successfully Created
                         </div>
+                        <% }     
+                        %>
+
+                        <% if(IsError){ %>
+                       <div id="lbl_error" class="alert alert-danger">
+                           <strong>Error</strong><%=ErrorMessage %>
+                        </div>
+                        <%} %>
+                      
+                    <div class="form-group">
+
+                        <asp:Label runat="server" AssociatedControlID="txt_id" CssClass="col-md-2 control-label">ID</asp:Label>
+                        <div class="col-md-10">
+                            <asp:TextBox Name="txt_ID" Enabled="false"  runat="server" ID="txt_ID" CssClass="form-control" />
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                      
+                        <asp:Label runat="server" AssociatedControlID="txt_username" CssClass="col-md-2 control-label">Username</asp:Label>
+                        <div class="col-md-10">
+                            <asp:TextBox Name="txt_username" AutoPostBack="true" runat="server" ID="txt_username" CssClass="form-control" OnTextChanged="txt_username_TextChanged" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_username"
+                                CssClass="text-danger" ErrorMessage="The User Name field is required." />
+                            <asp:CustomValidator ID="validator_username" runat="server" ValidateEmptyText="false" ControlToValidate="txt_username" CssClass="text-danger" OnServerValidate="validator_username_ServerValidate" ErrorMessage="User Name Already Exist"></asp:CustomValidator>
+                        </div>
+
                     </div>
                     <div class="form-group">
                         
@@ -89,7 +143,7 @@
                     
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button name="btn_register" runat="server" OnClick="Register" Text="Register" CssClass="btn btn-default" />
+                            <asp:Button ID="btn_register" name="btn_register" runat="server" OnClick="Register" Text="Register" CssClass="btn btn-default" />
                         </div>
                         </div>
                     </div>
@@ -120,4 +174,7 @@
             </section>
         </div>
 </div>
+
+  
+
 </asp:Content>

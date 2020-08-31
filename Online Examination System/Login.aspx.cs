@@ -13,7 +13,7 @@ namespace Online_Examination_System.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            pageLoad();
         }
 
         protected void LogIn(object sender, EventArgs e)
@@ -45,6 +45,15 @@ namespace Online_Examination_System.Account
                 lable_incorrect.Text = ex.Message;
             }
            
+        }
+
+        private void pageLoad()
+        {
+
+            if (Session["user"]!=null)
+            {
+                Response.Redirect("dashboard.aspx");
+            }
         }
     }
 
