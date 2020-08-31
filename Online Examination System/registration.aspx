@@ -47,6 +47,14 @@
                         </div>
                     </div>
                     <div class="form-group">
+                         <asp:Label runat="server" AssociatedControlID="txt_address" CssClass="col-md-2 control-label">Address</asp:Label>                       
+                        <div class="col-md-10">
+                            <asp:TextBox runat="server" ID="txt_address" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_address"
+                                CssClass="text-danger" ErrorMessage="The Contact field is required." />
+                        </div>
+                    </div>
+                    <div class="form-group">
                          <asp:Label runat="server" AssociatedControlID="txt_email" CssClass="col-md-2 control-label">Email</asp:Label>                       
                         <div class="col-md-10">
                             <asp:TextBox Name="txt_email" runat="server" ID="txt_email" CssClass="form-control" />
@@ -98,7 +106,22 @@
         <div class="col-md-4">
             <section id="reg_form_gv">
                
-                <div>  <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                <div> 
+
+                    <asp:GridView ID="gv_items" CssClass="table table-striped" runat="server" 
+                    AllowPaging="True" BorderStyle="None"
+                    onpageindexchanged="gv_items_PageIndexChanged" 
+                    onpageindexchanging="gv_items_PageIndexChanging" AllowSorting="True" 
+                    onsorting="gv_items_Sorting" AutoGenerateEditButton="false" 
+                    EnableModelValidation="True" onrowcancelingedit="gv_items_RowCancelingEdit" 
+                    onrowediting="gv_items_RowEditing" onrowupdating="gv_items_RowUpdating" 
+                    onselectedindexchanged="gv_items_SelectedIndexChanged">
+                    <Columns>
+                    <asp:HyperLinkField  DataTextField="ID" Text="EDIT"
+                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="items.aspx?acttype=edit&itmid={0}" />
+
+                    </Columns>
+                </asp:GridView>
               
                     </div>
             </section>

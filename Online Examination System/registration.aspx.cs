@@ -88,8 +88,8 @@ namespace Online_Examination_System
         {
             OES_BAL.User u = new OES_BAL.User();
             var users = u.GetAll();
-             GridView1.DataSource = users.Select(x=>new {x.ID,x.FirstName,x.LastName,x.UserName}).ToList();
-            GridView1.DataBind();
+            gv_items.DataSource = users.Select(x => new { x.ID, x.FirstName, x.LastName, x.UserName }).ToList();
+            gv_items.DataBind();
         }
     }
 }

@@ -58,6 +58,15 @@ namespace Online_Examination_System {
         protected global::System.Web.UI.WebControls.TextBox txt_contact;
         
         /// <summary>
+        /// txt_address control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_address;
+        
+        /// <summary>
         /// txt_email control.
         /// </summary>
         /// <remarks>
@@ -94,12 +103,12 @@ namespace Online_Examination_System {
         protected global::System.Web.UI.WebControls.TextBox txt_confirmpassword;
         
         /// <summary>
-        /// GridView1 control.
+        /// gv_items control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView gv_items;
     }
 }
