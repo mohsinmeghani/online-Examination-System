@@ -112,13 +112,22 @@ namespace Online_Examination_System {
         protected global::System.Web.UI.WebControls.TextBox txt_confirmpassword;
         
         /// <summary>
-        /// btn_register control.
+        /// btn_save control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_register;
+        protected global::System.Web.UI.WebControls.Button btn_save;
+        
+        /// <summary>
+        /// btn_delete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_delete;
         
         /// <summary>
         /// gv_users control.

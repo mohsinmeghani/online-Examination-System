@@ -277,5 +277,10 @@ namespace Online_Examination_System
 
         }
 
+        protected void delete(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

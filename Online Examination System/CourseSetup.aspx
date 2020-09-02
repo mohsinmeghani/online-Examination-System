@@ -1,12 +1,15 @@
-﻿<%@ Page Title="Program Setup" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProgramSetup.aspx.cs" Inherits="Online_Examination_System.ProgramSetup" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CourseSetup.aspx.cs" Inherits="Online_Examination_System.CourseRegistration" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
 
 <div class="row">
         <div class="col-md-8">
             <section id="registrationForm">
                 <div class="form-horizontal">
            
-                    <h4>Program Setup</h4>
+                    <h4>Course Setup</h4>
                     <hr />
 
                        <%
@@ -37,28 +40,34 @@
                                     
                     <div class="form-group">
                         
-                         <asp:Label runat="server" AssociatedControlID="txt_program_code" CssClass="col-md-2 control-label">Program Code</asp:Label>
+                         <asp:Label runat="server" AssociatedControlID="txt_course_code" CssClass="col-md-2 control-label">CourseCode</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox Name="txt_program_code" runat="server" ID="txt_program_code" CssClass="form-control" />
-                           <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_program_code"
-                                CssClass="text-danger" ErrorMessage="The Program Code field is required." />
+                            <asp:TextBox Name="txt_course_code" runat="server" ID="txt_course_code" CssClass="form-control" />
+                           <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_course_code"
+                                CssClass="text-danger" ErrorMessage="The Course Code field is required." />
 
                         </div>
                     </div>
                     <div class="form-group">
                         
-                         <asp:Label runat="server" AssociatedControlID="txt_program_name" CssClass="col-md-2 control-label">Program Name</asp:Label>
+                         <asp:Label runat="server" AssociatedControlID="txt_course_name" CssClass="col-md-2 control-label">Course Name</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox name="txt_program_name" runat="server" ID="txt_program_name" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_program_name"
-                                CssClass="text-danger" ErrorMessage="The Program Name field is required." />
+                            <asp:TextBox name="txt_course_name" runat="server" ID="txt_course_name" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_course_name"
+                                CssClass="text-danger" ErrorMessage="The Course Name field is required." />
                         </div>
                     </div>
                     <div class="form-group">
-                         <asp:Label runat="server" AssociatedControlID="txt_program_details" CssClass="col-md-2 control-label">Program Details</asp:Label>                       
+                         <asp:Label runat="server" AssociatedControlID="txt_course_details" CssClass="col-md-2 control-label">Course Details</asp:Label>                       
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="txt_program_details" CssClass="form-control" />
+                            <asp:TextBox runat="server" ID="txt_course_details" CssClass="form-control" />
                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                         <asp:Label runat="server" AssociatedControlID="ddl_program_name" CssClass="col-md-2 control-label">Program</asp:Label>                       
+                        <div class="col-md-5">
+                            <asp:DropDownList ID="ddl_program_name" DataTextField="program_name" DataValueField="program_id" runat="server"  CssClass="form-control"></asp:DropDownList>
                         </div>
                     </div>
               
@@ -67,12 +76,7 @@
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button ID="btn_save" name="btn_save" runat="server" OnClick="Save" Text="Save" CssClass="btn btn-default" />
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:Button ID="btn_delete" name="btn_delete" runat="server" OnClick="delete" Text="Delete" CssClass="btn btn-default" />
                         </div>
-                    </div>
                     </div>
                </section>
         </div>
@@ -81,10 +85,10 @@
                
                 <div> 
 
-                    <asp:GridView ID="gv_program" CssClass="table table-striped" runat="server" 
+                    <asp:GridView ID="gv_course" CssClass="table table-striped" runat="server" 
                     AllowPaging="True" BorderStyle="None"
-                    onpageindexchanging="gv_program_PageIndexChanging" AllowSorting="True" 
-                    onsorting="gv_program_Sorting" 
+                    onpageindexchanging="gv_course_PageIndexChanging" AllowSorting="True" 
+                    onsorting="gv_course_Sorting" 
                     BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                     <asp:HyperLinkField  DataTextField="ID" Text="EDIT"
@@ -106,4 +110,5 @@
             </section>
         </div>
 </div>
+
 </asp:Content>
