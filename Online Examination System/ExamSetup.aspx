@@ -1,12 +1,16 @@
-﻿<%@ Page Title="Program Setup" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProgramSetup.aspx.cs" Inherits="Online_Examination_System.ProgramSetup" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ExamSetup.aspx.cs" Inherits="Online_Examination_System.ExamSetup" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+    
 
 <div class="row">
         <div class="col-md-8">
             <section id="registrationForm">
                 <div class="form-horizontal">
            
-                    <h4>Program Setup</h4>
+                    <h4>Exam Setup</h4>
                     <hr />
 
                        <%
@@ -14,7 +18,7 @@
                             {
                         %>
                         <div class="alert alert-success">
-                            <strong>Success!</strong> Program Successfully Created
+                            <strong>Success!</strong> User Successfully Created
                         </div>
                         <% }     
                         %>
@@ -27,9 +31,16 @@
                     
                     <div class="form-group">
                         
-                         <asp:Label runat="server" AssociatedControlID="txt_id" CssClass="col-md-2 control-label">ID</asp:Label>
+                         <asp:Label runat="server" AssociatedControlID="txt_exam_id" CssClass="col-md-2 control-label">Exam ID</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox Name="txt_id" runat="server" Enabled="false" ID="txt_id" CssClass="form-control" />
+                            <asp:TextBox Name="txt_exam_id" runat="server" Enabled="false" ID="txt_exam_id" CssClass="form-control" />
+                          
+
+                        </div>
+                    </div>
+                         <asp:Label runat="server" AssociatedControlID="txt_course_id" CssClass="col-md-2 control-label"> Course ID</asp:Label>
+                        <div class="col-md-10">
+                            <asp:TextBox Name="txt_course_id" runat="server" Enabled="false" ID="txt_course_id" CssClass="form-control" />
                           
 
                         </div>
@@ -37,28 +48,27 @@
                                     
                     <div class="form-group">
                         
-                         <asp:Label runat="server" AssociatedControlID="txt_program_code" CssClass="col-md-2 control-label">Program Code</asp:Label>
+                         <asp:Label runat="server" AssociatedControlID="txt_exam_name" CssClass="col-md-2 control-label">Exam Name</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox Name="txt_program_code" runat="server" ID="txt_program_code" CssClass="form-control" />
-                           <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_program_code"
-                                CssClass="text-danger" ErrorMessage="The Program Code field is required." />
+                            <asp:TextBox Name="txt_exam_name" runat="server" ID="txt_exam_name" CssClass="form-control" />
+                           <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_exam_name"
+                                CssClass="text-danger" ErrorMessage="The Exam Name field is required." />
 
                         </div>
                     </div>
-                    <div class="form-group">
-                        
-                         <asp:Label runat="server" AssociatedControlID="txt_program_name" CssClass="col-md-2 control-label">Program Name</asp:Label>
-                        <div class="col-md-10">
-                            <asp:TextBox name="txt_program_name" runat="server" ID="txt_program_name" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_program_name"
-                                CssClass="text-danger" ErrorMessage="The Program Name field is required." />
                         </div>
                     </div>
                     <div class="form-group">
-                         <asp:Label runat="server" AssociatedControlID="txt_program_details" CssClass="col-md-2 control-label">Program Details</asp:Label>                       
+                         <asp:Label runat="server" AssociatedControlID="txt_exam_details" CssClass="col-md-2 control-label">Exam Details</asp:Label>                       
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="txt_program_details" CssClass="form-control" />
+                            <asp:TextBox runat="server" ID="txt_exam_details" CssClass="form-control" />
                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                         <asp:Label runat="server" AssociatedControlID="txt_exam_date" CssClass="col-md-2 control-label">Exam Date</asp:Label>                       
+                        <div class="col-md-10">
+                            <asp:Calendar ID="Calendar1" runat="server" CssClass="cal cal-default"></asp:Calendar>
                         </div>
                     </div>
               
@@ -81,14 +91,14 @@
                
                 <div> 
 
-                    <asp:GridView ID="gv_program" CssClass="table table-striped" runat="server" 
+                    <asp:GridView ID="gv_exam" CssClass="table table-striped" runat="server" 
                     AllowPaging="True" BorderStyle="None"
-                    onpageindexchanging="gv_program_PageIndexChanging" AllowSorting="True" 
-                    onsorting="gv_program_Sorting" 
+                    onpageindexchanging="gv_exam_PageIndexChanging" AllowSorting="True" 
+                    onsorting="gv_exam_Sorting" 
                     BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
-                    <asp:HyperLinkField  DataTextField="ID"   Text="EDIT"
-                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="ProgramSetup.aspx?acttype=edit&id={0}" />
+                    <asp:HyperLinkField  DataTextField="ID" Text="EDIT"
+                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="items.aspx?acttype=edit&itmid={0}" />
 
                     </Columns>
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
@@ -106,4 +116,6 @@
             </section>
         </div>
 </div>
+
+
 </asp:Content>

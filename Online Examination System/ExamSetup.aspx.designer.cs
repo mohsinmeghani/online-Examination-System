@@ -10,43 +10,52 @@
 namespace Online_Examination_System {
     
     
-    public partial class ProgramSetup {
+    public partial class ExamSetup {
         
         /// <summary>
-        /// txt_id control.
+        /// txt_exam_id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_id;
+        protected global::System.Web.UI.WebControls.TextBox txt_exam_id;
         
         /// <summary>
-        /// txt_program_code control.
+        /// txt_course_id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_program_code;
+        protected global::System.Web.UI.WebControls.TextBox txt_course_id;
         
         /// <summary>
-        /// txt_program_name control.
+        /// txt_exam_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_program_name;
+        protected global::System.Web.UI.WebControls.TextBox txt_exam_name;
         
         /// <summary>
-        /// txt_program_details control.
+        /// txt_exam_details control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_program_details;
+        protected global::System.Web.UI.WebControls.TextBox txt_exam_details;
+        
+        /// <summary>
+        /// Calendar1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar Calendar1;
         
         /// <summary>
         /// btn_save control.
@@ -67,12 +76,12 @@ namespace Online_Examination_System {
         protected global::System.Web.UI.WebControls.Button btn_delete;
         
         /// <summary>
-        /// gv_program control.
+        /// gv_exam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gv_program;
+        protected global::System.Web.UI.WebControls.GridView gv_exam;
     }
 }
