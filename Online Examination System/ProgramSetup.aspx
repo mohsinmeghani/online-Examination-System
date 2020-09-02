@@ -14,7 +14,7 @@
                             {
                         %>
                         <div class="alert alert-success">
-                            <strong>Success!</strong> User Successfully Created
+                            <strong>Success!</strong> Program Successfully Created
                         </div>
                         <% }     
                         %>
@@ -85,8 +85,8 @@
                     onsorting="gv_program_Sorting" 
                     BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
-                    <asp:HyperLinkField  DataTextField="ID" Text="EDIT"
-                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="items.aspx?acttype=edit&itmid={0}" />
+                    <asp:HyperLinkField  DataTextField="ID"   Text="EDIT"
+                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="ProgramSetup.aspx?acttype=edit&id={0}" />
 
                     </Columns>
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />

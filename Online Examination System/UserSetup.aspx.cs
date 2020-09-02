@@ -178,6 +178,28 @@ namespace Online_Examination_System
             {
                 var u = (OES_BAL.User)Session["user"];
                 User = u;
+
+                var id = Request.QueryString["id"];
+                if (!string.IsNullOrEmpty(id))
+                {
+                    var user_id = 0;
+                    var is_num = int.TryParse(id, out  user_id);
+                    if (is_num)
+                    {
+                        ViewState["IsEditMode"] = true;
+                        var user = new OES_BAL.User(user_id);
+                        txt_ID.Text = user.ID.ToString();
+                        txt_username.Text = user.UserName;
+                        txt_firstname.Text = user.FirstName;
+                        txt_lastname.Text = user.LastName;
+                        txt_email.Text = user.Email;
+                        txt_address.Text = user.Address;
+                        txt_contact.Text = user.Contact;
+                        ddl_gender.SelectedValue = user.Gender;
+
+                    }
+                }
+
             }
             else
             {

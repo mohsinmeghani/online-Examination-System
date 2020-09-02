@@ -13,13 +13,25 @@ namespace Online_Examination_System
         public bool IsSuccess { get; set; }
         public bool IsError { get; set; }
         public String ErrorMessage { get; set; }
+        
+
+        public OES_BAL.Program Program { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                PageLoad();
+                LoadGrid();
+            }
 
-            PageLoad();
-            LoadGrid();
-            // Add a method to populate Program Drop Down list on form load. 
+            
+               
         }
+                
+           
+           
+            // Add a method to populate Program Drop Down list on form load. 
+        
 
         protected void Save(object sender, EventArgs e)
         {
@@ -27,8 +39,16 @@ namespace Online_Examination_System
             {
                 if (Page.IsValid)
                 {
-                    Add();
-                    PostCreate();
+                    if ((bool)ViewState["IsEditMode"])
+                    {
+                        Update();
+                    }
+                    else
+                    {
+                        Add();
+                        
+                    }
+                    PostSave();
                 }
             }
             catch (Exception ex)
@@ -39,7 +59,22 @@ namespace Online_Examination_System
 
         }
 
-        private void PostCreate()
+        private void Update()
+        {
+            var programID = Convert.ToInt16(txt_id.Text);
+            var programCode = txt_program_code.Text;
+            var programName = txt_program_name.Text;
+            var programDetails = txt_program_details.Text;
+
+            Program = new OES_BAL.Program(programID);
+            Program.Code = programCode;
+            Program.Name = programName;
+            Program.Details = programDetails;
+            Program.Update();
+
+        }
+
+        private void PostSave()
         {
             IsSuccess = true;
             LockControls();
@@ -97,6 +132,24 @@ namespace Online_Examination_System
             {
                 var u = (OES_BAL.User)Session["user"];
                 User = u;
+
+                var id = Request.QueryString["id"];
+                if (!string.IsNullOrEmpty(id))
+                {
+                    var program_id = 0;
+                    var is_num = int.TryParse(id, out  program_id);
+                    if (is_num)
+                    {
+                        ViewState["IsEditMode"] = true;
+                        Program = new OES_BAL.Program(program_id);
+                        txt_id.Text = Program.ID.ToString();
+                        txt_program_code.Text = Program.Code;
+                        txt_program_name.Text = Program.Name;
+                        txt_program_details.Text = Program.Details;
+
+                    }
+                }
+               
             }
             else
             {

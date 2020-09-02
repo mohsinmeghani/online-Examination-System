@@ -171,7 +171,7 @@ function OnSuccess(response) {
                     onselectedindexchanged="gv_users_SelectedIndexChanged" BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                     <asp:HyperLinkField  DataTextField="ID" Text="EDIT"
-                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="items.aspx?acttype=edit&itmid={0}" />
+                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="UserSetup.aspx?acttype=edit&id={0}" />
 
                     </Columns>
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
