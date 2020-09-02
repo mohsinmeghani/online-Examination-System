@@ -77,6 +77,12 @@
                             <asp:Button ID="btn_save" name="btn_save" runat="server" OnClick="Save" Text="Save" CssClass="btn btn-default" />
                         </div>
                         </div>
+                    
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <asp:Button ID="btn_delete" name="btn_delete" runat="server" OnClick="delete" Text="Delete" CssClass="btn btn-default" />
+                        </div>
+                    </div>
                     </div>
                </section>
         </div>
