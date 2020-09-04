@@ -119,10 +119,12 @@ function OnSuccess(response) {
                     <div class="form-group">
                          <asp:Label runat="server" AssociatedControlID="ddl_gender" CssClass="col-md-2 control-label">Gender</asp:Label>                       
                         <div class="col-md-5">
-                         <asp:DropDownList runat="server" ID ="ddl_gender" runat="server" CssClass="form-control" >
+                           
+
+                         <asp:DropDownList runat="server" ID ="ddl_gender"  CssClass="form-control" >
                              <asp:ListItem Value="">Please Select</asp:ListItem>  
-                             <asp:ListItem>Male</asp:ListItem>
-                             <asp:ListItem>Female</asp:ListItem>
+                             <asp:ListItem Value="Male" Text="Male">Male</asp:ListItem>
+                             <asp:ListItem Value="Female" Text="Female">Female</asp:ListItem>
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="ddl_gender"
                                 CssClass="text-danger" ErrorMessage="The Gender is required." />

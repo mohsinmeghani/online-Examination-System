@@ -62,6 +62,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="UserSetup.aspx" id="p_program" class="dropdown-item" runat="server">User Registeration</a></li>
                             <li><a href="ProgramSetup.aspx" id="p_user" class="dropdown-item" runat="server">Program</a></li>
+                            <li><a href="CourseSetup.aspx" id="p_course" class="dropdown-item" runat="server">Course</a></li>
                         </ul>
                     </li>
 

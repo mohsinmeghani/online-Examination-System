@@ -17,7 +17,7 @@
                             {
                         %>
                         <div class="alert alert-success">
-                            <strong>Success!</strong> User Successfully Created
+                            <strong>Success!</strong> Course Successfully Created
                         </div>
                         <% }     
                         %>
@@ -67,8 +67,11 @@
                     <div class="form-group">
                          <asp:Label runat="server" AssociatedControlID="ddl_program_name" CssClass="col-md-2 control-label">Program</asp:Label>                       
                         <div class="col-md-5">
-                            <asp:DropDownList ID="ddl_program_name" DataTextField="program_name" DataValueField="program_id" runat="server"  CssClass="form-control"></asp:DropDownList>
-                        </div>
+                            <asp:DropDownList ID="ddl_program_name"  runat="server"  CssClass="form-control"></asp:DropDownList>
+                        
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="ddl_program_name"
+                                CssClass="text-danger" ErrorMessage="The Program is required." />
+                           </div>
                     </div>
               
                     
@@ -98,7 +101,7 @@
                     BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                     <asp:HyperLinkField  DataTextField="ID" Text="EDIT"
-                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="items.aspx?acttype=edit&itmid={0}" />
+                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="CourseSetup.aspx?acttype=edit&id={0}" />
 
                     </Columns>
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />

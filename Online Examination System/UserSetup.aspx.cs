@@ -19,14 +19,33 @@ namespace Online_Examination_System
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            PageLoad();
-            LoadGrid();
+            if (!Page.IsPostBack)
+            {
+                PageLoad();
+                LoadGrid();  
+            }
+            
         }
 
        
         protected void Register(object sender, EventArgs e)
         {
-            Add();
+            try
+            {
+                if ((bool)ViewState["IsEditMode"])
+                {
+                   // Update();
+                }
+                else
+                {
+                    Add();
+                }
+            }
+            catch (Exception ex)
+            {
+                SetError(ex.Message);
+            }
+           
         }
 
 
@@ -34,18 +53,18 @@ namespace Online_Examination_System
         {
             try
             {
-                if (Page.IsValid)
-                {
+               
+                    var id =  Convert.ToInt16( txt_ID.Text);
                     var firstName = txt_firstname.Text;
                     var lastName = txt_lastname.Text;
                     var gender = ddl_gender.SelectedValue;
-                    var username = txt_username.Text;
+                  
                     var email = txt_email.Text.Trim();
                     var contact = txt_contact.Text;
                     var address = txt_address.Text;
                     var password = txt_confirmpassword.Text;
 
-                    OES_BAL.User u = new OES_BAL.User();
+                    OES_BAL.User u = new OES_BAL.User(id);
                     
                     u.FirstName = firstName;
                     u.LastName = lastName;
@@ -53,12 +72,12 @@ namespace Online_Examination_System
                     u.Gender = gender;
                     u.Contact = contact;
                     u.Address = address;
-                    u.UserName = username;
+                    
                     u.Password = password;
                     u.EditedBy = User.FirstName + " " + User.LastName;
 
                     u.Update();
-                }
+                
             }
             catch (Exception ex)
             {
@@ -150,7 +169,7 @@ namespace Online_Examination_System
 
 
              TextBox[] textboxes = { txt_confirmpassword,txt_contact,txt_email,txt_firstname,txt_lastname,txt_password,txt_username,txt_address};
-             Button[] buttons = {btn_register };
+             Button[] buttons = {btn_save,btn_delete };
              DropDownList[] dds = { ddl_gender};
             //disable Textboxes
              foreach (var textbox in textboxes)
@@ -186,16 +205,24 @@ namespace Online_Examination_System
                     var is_num = int.TryParse(id, out  user_id);
                     if (is_num)
                     {
-                        ViewState["IsEditMode"] = true;
                         var user = new OES_BAL.User(user_id);
-                        txt_ID.Text = user.ID.ToString();
-                        txt_username.Text = user.UserName;
-                        txt_firstname.Text = user.FirstName;
-                        txt_lastname.Text = user.LastName;
-                        txt_email.Text = user.Email;
-                        txt_address.Text = user.Address;
-                        txt_contact.Text = user.Contact;
-                        ddl_gender.SelectedValue = user.Gender;
+                        if (user.isExist(user_id))
+                        {
+                            ViewState["IsEditMode"] = true;
+
+                            txt_ID.Text = user.ID.ToString();
+                            txt_username.Text = user.UserName;
+                            txt_firstname.Text = user.FirstName;
+                            txt_lastname.Text = user.LastName;
+                            txt_email.Text = user.Email;
+                            txt_address.Text = user.Address;
+                            txt_contact.Text = user.Contact;
+                            ddl_gender.SelectedValue = user.Gender;
+
+                            txt_username.Enabled = false;
+
+                        }
+                        
 
                     }
                 }

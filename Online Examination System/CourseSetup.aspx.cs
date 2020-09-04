@@ -16,9 +16,14 @@ namespace Online_Examination_System
      
         protected void Page_Load(object sender, EventArgs e)
         {
-            PageLoad();
-            LoadGrid();
-            LoadDDL();
+            if (!Page.IsPostBack)
+            {
+                LoadDDL();
+                PageLoad();
+                LoadGrid();
+               
+            }
+           
         }
 
         protected void Save(object sender, EventArgs e)
@@ -52,12 +57,18 @@ namespace Online_Examination_System
 
 
             TextBox[] textboxes = { txt_course_code, txt_course_details, txt_course_name };
-            Button[] buttons = { btn_save };
+            Button[] buttons = { btn_save , btn_delete };
+            DropDownList[] dds = {ddl_program_name };
 
             //disable Textboxes
             foreach (var textbox in textboxes)
             {
                 textbox.Enabled = false;
+            }
+
+            foreach (var dd in dds)
+            {
+                dd.Enabled = false;
             }
 
             //disable buttons
@@ -78,6 +89,8 @@ namespace Online_Examination_System
         {
             OES_BAL.Program p = new OES_BAL.Program();
             var list = p.GetAll();
+            ddl_program_name.DataTextField = "Name";
+            ddl_program_name.DataValueField = "ID";
             ddl_program_name.DataSource = list;
             ddl_program_name.DataBind();
         }
@@ -86,20 +99,20 @@ namespace Online_Examination_System
         private void Add()
         {
 
-            OES_BAL.Course p = new OES_BAL.Course();
+            OES_BAL.Course c = new OES_BAL.Course();
             var courseCode = txt_course_code.Text;
             var courseName = txt_course_name.Text;
             var courseDetails = txt_course_details.Text;
-            var courseProgram = ddl_program_name.DataValueField;
+            var p_id = Convert.ToInt16( ddl_program_name.SelectedValue);
 
-            p.Code = courseCode;
-            p.Name = courseName;
-            p.Details = courseDetails;
-          //  p.Program = courseProgram;
+            c.Code = courseCode;
+            c.Name = courseName;
+            c.Details = courseDetails;
+            c.Program = new OES_BAL.Program((int)p_id);
 
-            p.Add();
+            c.Add();
 
-            txt_id.Text = p.ID.ToString();
+            txt_id.Text = c.ID.ToString();
         }
 
         private void PageLoad()
@@ -108,6 +121,25 @@ namespace Online_Examination_System
             {
                 var u = (OES_BAL.User)Session["user"];
                 User = u;
+                ddl_program_name.Items.Insert(0,new ListItem("[Select Program]", ""));
+
+                var id = Request.QueryString["id"];
+                if (!string.IsNullOrEmpty(id))
+                {
+                    var course_id = 0;
+                    var is_num = int.TryParse(id, out  course_id);
+                    if (is_num)
+                    {
+                        ViewState["IsEditMode"] = true;
+                        var course = new OES_BAL.Course(course_id);
+                        txt_id.Text = course.ID.ToString();
+                        txt_course_code.Text = course.Code;
+                        txt_course_name.Text = course.Name;
+                        txt_course_details.Text = course.Details;
+                        ddl_program_name.SelectedValue = course.Program.ID.ToString();
+
+                    }
+                }
             }
             else
             {

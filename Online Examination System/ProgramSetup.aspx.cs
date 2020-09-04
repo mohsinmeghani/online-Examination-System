@@ -180,5 +180,10 @@ namespace Online_Examination_System
         {
 
         }
+
+        protected void btn_delete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
