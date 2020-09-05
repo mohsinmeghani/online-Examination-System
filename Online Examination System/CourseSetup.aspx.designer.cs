@@ -49,13 +49,13 @@ namespace Online_Examination_System {
         protected global::System.Web.UI.WebControls.TextBox txt_course_details;
         
         /// <summary>
-        /// ddl_program_name control.
+        /// ddl_program control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_program_name;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_program;
         
         /// <summary>
         /// btn_save control.

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CourseSetup.aspx.cs" Inherits="Online_Examination_System.CourseRegistration" %>
+﻿<%@ Page Title="Course Setup" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CourseSetup.aspx.cs" Inherits="Online_Examination_System.CourseRegistration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -17,14 +17,14 @@
                             {
                         %>
                         <div class="alert alert-success">
-                            <strong>Success!</strong> Course Successfully Created
+                            <strong>Success!</strong> <%= SuccessMessage %>
                         </div>
                         <% }     
                         %>
 
                         <% if(IsError){ %>
                        <div id="lbl_error" class="alert alert-danger">
-                           <strong>Error</strong><%=ErrorMessage %>
+                           <strong>Error!</strong> <%=ErrorMessage %>
                         </div>
                         <%} %>
                     
@@ -65,11 +65,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                         <asp:Label runat="server" AssociatedControlID="ddl_program_name" CssClass="col-md-2 control-label">Program</asp:Label>                       
+                         <asp:Label runat="server" AssociatedControlID="ddl_program" CssClass="col-md-2 control-label">Program</asp:Label>                       
                         <div class="col-md-5">
-                            <asp:DropDownList ID="ddl_program_name"  runat="server"  CssClass="form-control"></asp:DropDownList>
+                            <asp:DropDownList ID="ddl_program"  runat="server"  CssClass="form-control"></asp:DropDownList>
                         
-                        <asp:RequiredFieldValidator runat="server" ControlToValidate="ddl_program_name"
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="ddl_program"
                                 CssClass="text-danger" ErrorMessage="The Program is required." />
                            </div>
                     </div>
@@ -78,12 +78,13 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button ID="btn_save" name="btn_save" runat="server" OnClick="Save" Text="Save" CssClass="btn btn-default" />
+                            <asp:Button ID="btn_delete" name="btn_delete" runat="server" OnClick="btn_delete_Click" Text="Delete" CssClass="btn btn-danger" />
                         </div>
                         </div>
                     
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button ID="btn_delete" name="btn_delete" runat="server" OnClick="delete" Text="Delete" CssClass="btn btn-default" />
+                            
                         </div>
                     </div>
                     </div>
