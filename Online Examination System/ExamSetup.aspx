@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ExamSetup.aspx.cs" Inherits="Online_Examination_System.ExamSetup" %>
+﻿<%@ Page Title="Exam Setup" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ExamSetup.aspx.cs" Inherits="Online_Examination_System.ExamSetup" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -18,14 +18,14 @@
                             {
                         %>
                         <div class="alert alert-success">
-                            <strong>Success!</strong> User Successfully Created
+                            <strong>Success!</strong> <%= SuccessMessage %>
                         </div>
                         <% }     
                         %>
 
                         <% if(IsError){ %>
                        <div id="lbl_error" class="alert alert-danger">
-                           <strong>Error</strong><%=ErrorMessage %>
+                           <strong>Error! </strong> <%=ErrorMessage %>
                         </div>
                         <%} %>
                     
@@ -68,19 +68,20 @@
                     <div class="form-group">
                          <asp:Label runat="server" AssociatedControlID="txt_exam_date" CssClass="col-md-2 control-label">Exam Date</asp:Label>                       
                         <div class="col-md-10">
-                            <asp:Calendar ID="Calendar1" runat="server" CssClass="cal cal-default"></asp:Calendar>
+                            <asp:Calendar ID="txt_exam_date" runat="server" CssClass="cal cal-default"></asp:Calendar>
                         </div>
                     </div>
               
                     
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button ID="btn_save" name="btn_save" runat="server" OnClick="Save" Text="Save" CssClass="btn btn-default" />
+                            <asp:Button ID="btn_save" name="btn_save" runat="server" OnClick="btn_save_Click" Text="Save" CssClass="btn btn-default" />
+                            <asp:Button ID="btn_delete" name="btn_delete" runat="server" OnClick="btn_delete_Click" Text="Delete" CssClass="btn btn-danger" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button ID="btn_delete" name="btn_delete" runat="server" OnClick="delete" Text="Delete" CssClass="btn btn-default" />
+                            
                         </div>
                     </div>
                     </div>
@@ -98,7 +99,7 @@
                     BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                     <asp:HyperLinkField  DataTextField="ID" Text="EDIT"
-                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="items.aspx?acttype=edit&itmid={0}" />
+                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="ExamSetup.aspx?acttype=edit&id={0}" />
 
                     </Columns>
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />

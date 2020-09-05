@@ -49,13 +49,13 @@ namespace Online_Examination_System {
         protected global::System.Web.UI.WebControls.TextBox txt_exam_details;
         
         /// <summary>
-        /// Calendar1 control.
+        /// txt_exam_date control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        protected global::System.Web.UI.WebControls.Calendar txt_exam_date;
         
         /// <summary>
         /// btn_save control.

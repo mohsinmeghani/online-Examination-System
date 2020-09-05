@@ -13,13 +13,33 @@ namespace Online_Examination_System
         public bool IsSuccess { get; set; }
         public bool IsError { get; set; }
         public String ErrorMessage { get; set; }
-     
+        public String SuccessMessage { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
         protected void delete(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void gv_exam_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
+
+        protected void gv_exam_Sorting(object sender, GridViewSortEventArgs e)
         {
 
         }
