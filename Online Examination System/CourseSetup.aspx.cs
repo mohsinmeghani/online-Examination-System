@@ -161,11 +161,20 @@ namespace Online_Examination_System
                     {
                         ViewState["IsEditMode"] = true;
                         var course = new OES_BAL.Course(course_id);
-                        txt_id.Text = course.ID.ToString();
-                        txt_course_code.Text = course.Code;
-                        txt_course_name.Text = course.Name;
-                        txt_course_details.Text = course.Details;
-                        ddl_program.SelectedValue = course.Program.ID.ToString();
+                        if (course.ID!=0)
+                        {
+                            txt_id.Text = course.ID.ToString();
+                            txt_course_code.Text = course.Code;
+                            txt_course_name.Text = course.Name;
+                            txt_course_details.Text = course.Details;
+                            ddl_program.SelectedValue = course.Program.ID.ToString();
+                        }
+                        else
+                        {
+                            SetError("Invalid Course ID");
+                            LockControls();
+                        }
+                        
 
                     }
                 }

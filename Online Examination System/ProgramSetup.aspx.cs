@@ -13,6 +13,7 @@ namespace Online_Examination_System
         public bool IsSuccess { get; set; }
         public bool IsError { get; set; }
         public String ErrorMessage { get; set; }
+        public String SuccessMessage { get; set; }
         
 
         public OES_BAL.Program Program { get; set; }
@@ -76,7 +77,7 @@ namespace Online_Examination_System
 
         private void PostSave()
         {
-            IsSuccess = true;
+            SetSuccess("Program Created / Updated");
             LockControls();
             LoadGrid();
         }
@@ -86,7 +87,7 @@ namespace Online_Examination_System
 
 
             TextBox[] textboxes = { txt_program_code,txt_program_details,txt_program_name };
-            Button[] buttons = { btn_save };
+            Button[] buttons = { btn_save ,btn_delete };
             
             //disable Textboxes
             foreach (var textbox in textboxes)
@@ -130,6 +131,7 @@ namespace Online_Examination_System
         {
             if (Session["user"] != null)
             {
+                ViewState["IsEditMode"] = false;
                 var u = (OES_BAL.User)Session["user"];
                 User = u;
 
@@ -142,10 +144,20 @@ namespace Online_Examination_System
                     {
                         ViewState["IsEditMode"] = true;
                         Program = new OES_BAL.Program(program_id);
-                        txt_id.Text = Program.ID.ToString();
-                        txt_program_code.Text = Program.Code;
-                        txt_program_name.Text = Program.Name;
-                        txt_program_details.Text = Program.Details;
+
+                        if (Program.ID!=0)
+                        {
+                            txt_id.Text = Program.ID.ToString();
+                            txt_program_code.Text = Program.Code;
+                            txt_program_name.Text = Program.Name;
+                            txt_program_details.Text = Program.Details;
+                        }
+                        else
+                        {
+                            SetError("Invalid Program ID");
+                            LockControls();
+                        }
+                       
 
                     }
                 }
@@ -164,6 +176,12 @@ namespace Online_Examination_System
             ErrorMessage = message;
         }
 
+        private void SetSuccess(string message)
+        {
+            IsSuccess = true;
+            SuccessMessage = message;
+        }
+
 
         protected void gv_program_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
@@ -176,14 +194,39 @@ namespace Online_Examination_System
 
         }
 
-        protected void delete(object sender, EventArgs e)
+        private void delete()
         {
-
+            if ((bool)ViewState["IsEditMode"])
+            {
+                var id = Convert.ToInt16(txt_id.Text);
+                var p = new OES_BAL.Program(id);
+                p.Delete();
+                PostDelete();
+            }
+            else
+            {
+                SetError("Select Any Program to Delete");
+            }
         }
 
+
+        private void PostDelete()
+        {
+            SetSuccess("Program Deleted");
+            LoadGrid();
+            LockControls();
+        }
         protected void btn_delete_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                delete();
+            }
+            catch (Exception ex )
+            {
+                SetError(ex.Message);
+                
+            }
         }
     }
 }

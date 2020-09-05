@@ -15,6 +15,7 @@ namespace Online_Examination_System
         public bool IsSuccess { get; set; }
         public bool IsError { get; set; }
         public String ErrorMessage { get; set; }
+        public String SuccessMessage { get; set; }
         
 
         protected void Page_Load(object sender, EventArgs e)
@@ -90,6 +91,7 @@ namespace Online_Examination_System
         {
             try
             {
+                var currentUser = GetCurrentUser();
 
                 if (Page.IsValid)
                 {
@@ -113,7 +115,7 @@ namespace Online_Examination_System
                     u.Address = address;
                     u.UserName = username;
                     u.Password = password;
-                    u.CreatedBy = User.FirstName + " " + User.LastName;
+                    u.CreatedBy = currentUser != null ? currentUser.FirstName + " " + currentUser.LastName : "";
 
                     u.ADD();
 
@@ -159,7 +161,7 @@ namespace Online_Examination_System
 
         private void PostCreate()
         {
-            IsSuccess = true;
+            SetSuccess("User Created");
             LockControls();
             LoadGrid();
         }
@@ -191,10 +193,23 @@ namespace Online_Examination_System
              }
         }
 
+
+        private OES_BAL.User GetCurrentUser()
+        {
+            if (Session["user"]!=null)
+            {
+                var u = (OES_BAL.User)Session["user"];
+                return u;
+
+            }
+
+            return null;
+        }
         private void PageLoad()
         {
             if (Session["user"]!=null)
             {
+                ViewState["IsEditMode"] = false;
                 var u = (OES_BAL.User)Session["user"];
                 User = u;
 
@@ -221,6 +236,11 @@ namespace Online_Examination_System
 
                             txt_username.Enabled = false;
 
+                        }
+                        else
+                        {
+                            SetError("Invalid User ID");
+                            LockControls();
                         }
                         
 
@@ -260,7 +280,11 @@ namespace Online_Examination_System
             ErrorMessage = message;
         }
 
-
+        private void SetSuccess(string message)
+        {
+            IsSuccess = true;
+            SuccessMessage = message;
+        }
         private void LoadGrid()
         {
             OES_BAL.User u = new OES_BAL.User();
@@ -289,10 +313,7 @@ namespace Online_Examination_System
             gv_users.DataSource = list.Select(x => new { x.ID, x.UserName, x.FirstName, x.LastName }).ToList();
             gv_users.DataBind();
         }
-        protected void gv_users_PageIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         protected void gv_users_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
@@ -306,29 +327,45 @@ namespace Online_Examination_System
 
         }
 
-        protected void gv_users_RowEditing(object sender, GridViewEditEventArgs e)
-        {
+        
 
+        
+        
+
+        private void delete()
+        {
+            if ((bool)ViewState["IsEditMode"])
+            {
+                var id =Convert.ToInt16(txt_ID.Text);
+                var u =new OES_BAL.User(id);
+                u.Delete();
+                PostDelete();
+
+            }
+           else
+            {
+                SetError("Select Any User to Delete");
+            }
         }
 
-        protected void gv_users_SelectedIndexChanged(object sender, EventArgs e)
+        private void PostDelete()
         {
-
+            SetSuccess("User Deleted");
+            LoadGrid();
+            LockControls();
         }
 
-        protected void gv_users_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        protected void btn_delete_Click(object sender, EventArgs e)
         {
-
-        }
-
-        protected void gv_users_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-
-        }
-
-        protected void delete(object sender, EventArgs e)
-        {
-
+            try
+            {
+                delete();
+            }
+            catch (Exception ex)
+            {
+                SetError(ex.Message);
+                
+            }
         }
 
     }

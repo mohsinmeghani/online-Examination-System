@@ -44,14 +44,14 @@ function OnSuccess(response) {
                             {
                         %>
                         <div class="alert alert-success">
-                            <strong>Success!</strong> User Successfully Created
+                            <strong>Success!</strong> <%= SuccessMessage %>
                         </div>
                         <% }     
                         %>
 
                         <% if(IsError){ %>
                        <div id="lbl_error" class="alert alert-danger">
-                           <strong>Error</strong><%=ErrorMessage %>
+                           <strong>Error!</strong> <%=ErrorMessage %>
                         </div>
                         <%} %>
                       
@@ -154,11 +154,12 @@ function OnSuccess(response) {
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button ID="btn_save" name="btn_save" runat="server" OnClick="Register" Text="Save" CssClass="btn btn-default" />
+                             <asp:Button ID="btn_delete" name="btn_delete" runat="server" OnClick="btn_delete_Click" Text="Delete" CssClass="btn btn-danger" />
                         </div>
                         </div>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button ID="btn_delete" name="btn_delete" runat="server" OnClick="delete" Text="Delete" CssClass="btn btn-default" />
+                           
                         </div>
                     </div>
                     </div>
@@ -171,11 +172,11 @@ function OnSuccess(response) {
 
                     <asp:GridView ID="gv_users" CssClass="table table-striped" runat="server" 
                     AllowPaging="True" BorderStyle="None"
-                    onpageindexchanged="gv_users_PageIndexChanged" 
+                    
                     onpageindexchanging="gv_users_PageIndexChanging" AllowSorting="True" 
-                    onsorting="gv_users_Sorting" onrowcancelingedit="gv_users_RowCancelingEdit" 
-                    onrowediting="gv_users_RowEditing" onrowupdating="gv_users_RowUpdating" 
-                    onselectedindexchanged="gv_users_SelectedIndexChanged" BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                    onsorting="gv_users_Sorting" 
+            
+                     BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                     <asp:HyperLinkField  DataTextField="ID" Text="EDIT"
                      HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="UserSetup.aspx?acttype=edit&id={0}" />
