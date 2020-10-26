@@ -101,6 +101,14 @@ namespace Online_Examination_System
             ddl_program.DataValueField = "ID";
             ddl_program.DataSource = list;
             ddl_program.DataBind();
+
+            OES_BAL.CourseCategory cc = new OES_BAL.CourseCategory();
+            var cc_list = cc.GetAll();
+            ddl_course_category.DataTextField = "Name";
+            ddl_course_category.DataValueField = "ID";
+            ddl_course_category.DataSource = cc_list;
+            ddl_course_category.DataBind();
+
         }
 
 
@@ -112,6 +120,8 @@ namespace Online_Examination_System
             var courseName = txt_course_name.Text;
             var courseDetails = txt_course_details.Text;
             var p_id = Convert.ToInt16( ddl_program.SelectedValue);
+            var cc_id = ddl_course_category.SelectedValue != "" ? Convert.ToInt16(ddl_course_category.SelectedValue) : 0;
+
 
             c.Code = courseCode;
             c.Name = courseName;
@@ -151,6 +161,8 @@ namespace Online_Examination_System
                 var u = (OES_BAL.User)Session["user"];
                 User = u;
                 ddl_program.Items.Insert(0,new ListItem("[Select Program]", ""));
+                ddl_course_category.Items.Insert(0, new ListItem("[Select Category]", ""));
+                ddl_parent_course.Items.Insert(0, new ListItem("[Select Parent Course]", ""));
 
                 var id = Request.QueryString["id"];
                 if (!string.IsNullOrEmpty(id))
@@ -168,6 +180,8 @@ namespace Online_Examination_System
                             txt_course_name.Text = course.Name;
                             txt_course_details.Text = course.Details;
                             ddl_program.SelectedValue = course.Program.ID.ToString();
+                            ddl_course_category.SelectedValue = course.CourseCategory!=null?course.CourseCategory.ID.ToString():"";
+                            ddl_parent_course.SelectedValue = course.ParentCourse!=null? course.ParentCourse.ID.ToString():"";
                         }
                         else
                         {

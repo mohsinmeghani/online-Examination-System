@@ -73,6 +73,25 @@
                                 CssClass="text-danger" ErrorMessage="The Program is required." />
                            </div>
                     </div>
+
+                      <div class="form-group">
+                         <asp:Label runat="server" AssociatedControlID="ddl_course_category" CssClass="col-md-2 control-label">Category</asp:Label>                       
+                        <div class="col-md-5">
+                            <asp:DropDownList ID="ddl_course_category"  runat="server"  CssClass="form-control"></asp:DropDownList>
+                        
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="ddl_course_category"
+                                CssClass="text-danger" ErrorMessage="The Program is required." />
+                           </div>
+                    </div>
+
+                      <div class="form-group">
+                         <asp:Label runat="server" AssociatedControlID="ddl_parent_course" CssClass="col-md-2 control-label">Parent Course</asp:Label>                       
+                        <div class="col-md-5">
+                            <asp:DropDownList ID="ddl_parent_course"  runat="server"  CssClass="form-control"></asp:DropDownList>
+                        
+                        
+                           </div>
+                    </div>
               
                     
                     <div class="form-group">

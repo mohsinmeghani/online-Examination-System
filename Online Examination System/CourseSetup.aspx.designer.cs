@@ -58,6 +58,24 @@ namespace Online_Examination_System {
         protected global::System.Web.UI.WebControls.DropDownList ddl_program;
         
         /// <summary>
+        /// ddl_course_category control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_course_category;
+        
+        /// <summary>
+        /// ddl_parent_course control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_parent_course;
+        
+        /// <summary>
         /// btn_save control.
         /// </summary>
         /// <remarks>
