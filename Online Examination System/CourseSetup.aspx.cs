@@ -66,7 +66,7 @@ namespace Online_Examination_System
 
             TextBox[] textboxes = { txt_course_code, txt_course_details, txt_course_name };
             Button[] buttons = { btn_save , btn_delete };
-            DropDownList[] dds = {ddl_program };
+            DropDownList[] dds = {ddl_program,ddl_course_category,ddl_parent_course };
 
             //disable Textboxes
             foreach (var textbox in textboxes)
@@ -127,6 +127,11 @@ namespace Online_Examination_System
             c.Name = courseName;
             c.Details = courseDetails;
             c.Program = new OES_BAL.Program((int)p_id);
+            if (cc_id!=0)
+            {
+                c.CourseCategory = new OES_BAL.CourseCategory(cc_id);
+            }
+           
 
             c.Add();
 
