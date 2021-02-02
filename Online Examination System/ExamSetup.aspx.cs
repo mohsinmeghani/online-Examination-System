@@ -9,7 +9,7 @@ namespace Online_Examination_System
 {
     public partial class ExamSetup : System.Web.UI.Page
     {
-        public OES_BAL.User User { get; set; }
+        public OES_BAL.Student User { get; set; }
         public bool IsSuccess { get; set; }
         public bool IsError { get; set; }
         public String ErrorMessage { get; set; }

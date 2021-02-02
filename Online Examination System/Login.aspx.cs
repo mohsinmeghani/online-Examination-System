@@ -26,7 +26,7 @@ namespace Online_Examination_System.Account
 
         private void login()
         {
-            OES_BAL.User u = new User();
+            OES_BAL.Student u = new Student();
             var username = txt_username.Text.Trim();
             var password = txt_password.Text;
 

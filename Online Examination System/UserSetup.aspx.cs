@@ -11,7 +11,7 @@ namespace Online_Examination_System
     public partial class UserSetup : System.Web.UI.Page
     {
 
-        public OES_BAL.User User { get; set; }
+        public OES_BAL.Student User { get; set; }
         public bool IsSuccess { get; set; }
         public bool IsError { get; set; }
         public String ErrorMessage { get; set; }
@@ -65,7 +65,7 @@ namespace Online_Examination_System
                     var address = txt_address.Text;
                     var password = txt_confirmpassword.Text;
 
-                    OES_BAL.User u = new OES_BAL.User(id);
+                    OES_BAL.Student u = new OES_BAL.Student(id);
                     
                     u.FirstName = firstName;
                     u.LastName = lastName;
@@ -105,7 +105,7 @@ namespace Online_Examination_System
                     var address = txt_address.Text;
                     var password = txt_confirmpassword.Text;
 
-                    OES_BAL.User u = new OES_BAL.User();
+                    OES_BAL.Student u = new OES_BAL.Student();
                     
                     u.FirstName = firstName;
                     u.LastName = lastName;
@@ -194,11 +194,11 @@ namespace Online_Examination_System
         }
 
 
-        private OES_BAL.User GetCurrentUser()
+        private OES_BAL.Student GetCurrentUser()
         {
             if (Session["user"]!=null)
             {
-                var u = (OES_BAL.User)Session["user"];
+                var u = (OES_BAL.Student)Session["user"];
                 return u;
 
             }
@@ -210,7 +210,7 @@ namespace Online_Examination_System
             if (Session["user"]!=null)
             {
                 ViewState["IsEditMode"] = false;
-                var u = (OES_BAL.User)Session["user"];
+                var u = (OES_BAL.Student)Session["user"];
                 User = u;
 
                 var id = Request.QueryString["id"];
@@ -220,7 +220,7 @@ namespace Online_Examination_System
                     var is_num = int.TryParse(id, out  user_id);
                     if (is_num)
                     {
-                        var user = new OES_BAL.User(user_id);
+                        var user = new OES_BAL.Student(user_id);
                         if (user.isExist(user_id))
                         {
                             ViewState["IsEditMode"] = true;
@@ -250,7 +250,7 @@ namespace Online_Examination_System
             }
             else
             {
-                User = new OES_BAL.User();
+                User = new OES_BAL.Student();
                 Response.Redirect("login.aspx");
             }
         }
@@ -287,7 +287,7 @@ namespace Online_Examination_System
         }
         private void LoadGrid()
         {
-            OES_BAL.User u = new OES_BAL.User();
+            OES_BAL.Student u = new OES_BAL.Student();
             var list = u.GetAll();
             gv_users.DataSource = list.Select(x=>new {x.ID,x.UserName,x.FirstName,x.LastName}).ToList();
             gv_users.DataBind();
@@ -295,7 +295,7 @@ namespace Online_Examination_System
 
         private void LoadGrid(string SortExpression)
         {
-            OES_BAL.User u = new OES_BAL.User();
+            OES_BAL.Student u = new OES_BAL.Student();
             var list = u.GetAll();
             if (SortExpression=="ID")
             {
@@ -337,7 +337,7 @@ namespace Online_Examination_System
             if ((bool)ViewState["IsEditMode"])
             {
                 var id =Convert.ToInt16(txt_ID.Text);
-                var u =new OES_BAL.User(id);
+                var u =new OES_BAL.Student(id);
                 u.Delete();
                 PostDelete();
 

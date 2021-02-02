@@ -15,6 +15,7 @@ namespace Online_Examination_System
         public String loginTitle { get; set; }
         public String Name { get; set; }
         public bool IsLogin { get; set; }
+        public bool IsAdmin { get; set; }
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -30,7 +31,7 @@ namespace Online_Examination_System
         {
             if (Session["user"] != null)
             {
-                var u = (OES_BAL.User)Session["user"];
+                var u = (OES_BAL.Student)Session["user"];
                 Name = u.FirstName+" "+u.LastName;
                 loginTitle = "Log Out";
                 IsLogin = true;

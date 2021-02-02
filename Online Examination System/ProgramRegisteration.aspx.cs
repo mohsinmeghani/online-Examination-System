@@ -9,7 +9,7 @@ namespace Online_Examination_System
 {
     public partial class ProgramRegisteration : System.Web.UI.Page
     {
-        public OES_BAL.User User { get; set; }
+        public OES_BAL.Student User { get; set; }
         public bool IsSuccess { get; set; }
         public bool IsError { get; set; }
         public String ErrorMessage { get; set; }
@@ -34,7 +34,7 @@ namespace Online_Examination_System
             if (Session["user"] != null)
             {
                 ViewState["IsEditMode"] = false;
-                var u = (OES_BAL.User)Session["user"];
+                var u = (OES_BAL.Student)Session["user"];
                 User = u;
 
                 var id = Request.QueryString["id"];
@@ -49,7 +49,7 @@ namespace Online_Examination_System
                     var is_num = int.TryParse(id, out  user_id);
                     if (is_num)
                     {
-                        var user = new OES_BAL.User(user_id);
+                        var user = new OES_BAL.Student(user_id);
                         if (user.isExist(user_id))
                         {
                             ViewState["IsEditMode"] = true;
@@ -67,7 +67,7 @@ namespace Online_Examination_System
             }
             else
             {
-                User = new OES_BAL.User();
+                User = new OES_BAL.Student();
                 Response.Redirect("login.aspx");
             }
         }
@@ -136,7 +136,7 @@ namespace Online_Examination_System
 
             OES_BAL.RegisterProgram rp = new OES_BAL.RegisterProgram();
             rp.Date = DateTime.Now;
-            rp.User = this.User;
+            rp.Student = this.User;
 
             var user_id = User.ID;
 

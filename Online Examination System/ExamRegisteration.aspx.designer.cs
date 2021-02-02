@@ -7,38 +7,31 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Online_Examination_System {
-    
-    
-    public partial class CourseRegisteration {
-        
+namespace Online_Examination_System
+{
+
+
+    public partial class CourseRegisteration
+    {
+
         /// <summary>
-        /// lbl_UserID control.
+        /// dd_users control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_UserID;
-        
+        protected global::System.Web.UI.WebControls.DropDownList dd_users;
+
         /// <summary>
-        /// lbl_Name control.
+        /// dd_program control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Name;
-        
-        /// <summary>
-        /// lbl_program control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_program;
-        
+        protected global::System.Web.UI.WebControls.DropDownList dd_program;
+
         /// <summary>
         /// ddl_CourseCategory control.
         /// </summary>
@@ -47,7 +40,43 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_CourseCategory;
-        
+
+        /// <summary>
+        /// dd_course control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dd_course;
+
+        /// <summary>
+        /// lbl_reg_date control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_reg_date;
+
+        /// <summary>
+        /// lbl_exp_date control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_exp_date;
+
+        /// <summary>
+        /// btn_save control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_save;
+
         /// <summary>
         /// div_courses control.
         /// </summary>

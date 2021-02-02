@@ -19,6 +19,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -152,7 +154,7 @@
     <Content Include="About.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
-    <Content Include="CourseRegisteration.aspx" />
+    <Content Include="ExamRegisteration.aspx" />
     <Content Include="CourseSetup.aspx" />
     <Content Include="DashBoard.aspx" />
     <Content Include="ExamSetup.aspx" />
@@ -238,12 +240,12 @@
     <Compile Include="Account\Forgot.aspx.designer.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CourseRegisteration.aspx.cs">
-      <DependentUpon>CourseRegisteration.aspx</DependentUpon>
+    <Compile Include="ExamRegisteration.aspx.cs">
+      <DependentUpon>ExamRegisteration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CourseRegisteration.aspx.designer.cs">
-      <DependentUpon>CourseRegisteration.aspx</DependentUpon>
+    <Compile Include="ExamRegisteration.aspx.designer.cs">
+      <DependentUpon>ExamRegisteration.aspx</DependentUpon>
     </Compile>
     <Compile Include="CourseSetup.aspx.cs">
       <DependentUpon>CourseSetup.aspx</DependentUpon>
