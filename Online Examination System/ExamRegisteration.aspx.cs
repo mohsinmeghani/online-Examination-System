@@ -111,12 +111,12 @@ namespace Online_Examination_System
         {
             OES_BAL.Student obj_user = new OES_BAL.Student();
             var users =obj_user.GetAll();
-            dd_users.DataValueField = "ID";
-            dd_users.DataTextField = "FirstName";
-            dd_users.DataSource = users;
-            dd_users.DataBind();
+            dd_students.DataValueField = "ID";
+            dd_students.DataTextField = "FirstName";
+            dd_students.DataSource = users;
+            dd_students.DataBind();
 
-            dd_users.Items.Insert(0, new ListItem("[Select Value]", "0"));
+            dd_students.Items.Insert(0, new ListItem("[Select Value]", "0"));
         }
 
        
@@ -131,14 +131,14 @@ namespace Online_Examination_System
             return sb.ToString();
         }
 
-        protected void dd_users_SelectedIndexChanged(object sender, EventArgs e)
+        protected void dd_students_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadPrograms();
         }
 
         private void LoadPrograms()
         {
-            var userid = Convert.ToInt32(dd_users.SelectedValue);
+            var userid = Convert.ToInt32(dd_students.SelectedValue);
             if (userid != 0)
             {
                 var p = new OES_BAL.RegisterProgram(userid);
@@ -213,6 +213,15 @@ namespace Online_Examination_System
         }
 
 
+        private void LockControls()
+        {
+            btn_save.Enabled = false;
+            dd_students.Enabled = false;
+            dd_program.Enabled = false;
+            ddl_CourseCategory.Enabled = false;
+            dd_course.Enabled = false;
+           
+        }
 
         private void Save()
         {
@@ -220,7 +229,7 @@ namespace Online_Examination_System
 
             try
             {
-                var u_id = Convert.ToInt32(dd_users.SelectedValue);
+                var u_id = Convert.ToInt32(dd_students.SelectedValue);
                 var p_id = Convert.ToInt32(dd_program.SelectedValue);
                 var cc_id = Convert.ToInt32(ddl_CourseCategory.SelectedValue);
                 var c_id = Convert.ToInt32(dd_course.SelectedValue);
@@ -229,14 +238,15 @@ namespace Online_Examination_System
                 if (u_id!=0 && p_id!=0 && cc_id!=0 && c_id!=0)
                 {
                     var exam = new OES_BAL.Exam();
-                    exam.User = new OES_BAL.Student(u_id);
-                    exam.Course = new OES_BAL.Course(u_id);
+                    exam.Student = new OES_BAL.Student(u_id);
+                    exam.Course = new OES_BAL.Course(c_id);
                     exam.Registeration_Date = Convert.ToDateTime(lbl_reg_date.Text);
                     exam.Expiration_Date = Convert.ToDateTime(lbl_exp_date.Text);
                     exam.Description = "ABC";
                     exam.Add();
 
                     SetSuccess("Exam Registered");
+                    LockControls();
                 }
                 else
                 {

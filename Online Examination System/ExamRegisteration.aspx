@@ -36,9 +36,9 @@
                     
 
                      <div class="form-group">
-                         <asp:Label runat="server" AssociatedControlID="dd_users" CssClass="col-md-2 control-label">Student Name</asp:Label>
+                         <asp:Label runat="server" AssociatedControlID="dd_students" CssClass="col-md-2 control-label">Student Name</asp:Label>
                          <div class="col-md-5">
-                             <asp:DropDownList runat="server" ID ="dd_users"  OnSelectedIndexChanged="dd_users_SelectedIndexChanged"  CssClass="form-control" AutoPostBack="True">
+                             <asp:DropDownList runat="server" ID ="dd_students"  OnSelectedIndexChanged="dd_students_SelectedIndexChanged"  CssClass="form-control" AutoPostBack="True">
                             
                               </asp:DropDownList>
                           </div>

@@ -11,35 +11,17 @@ namespace Online_Examination_System
 {
 
 
-    public partial class CourseRegisteration
+    public partial class QuestionSetup
     {
 
         /// <summary>
-        /// dd_students control.
+        /// txt_id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dd_students;
-
-        /// <summary>
-        /// dd_program control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dd_program;
-
-        /// <summary>
-        /// ddl_CourseCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_CourseCategory;
+        protected global::System.Web.UI.WebControls.TextBox txt_id;
 
         /// <summary>
         /// dd_course control.
@@ -51,22 +33,58 @@ namespace Online_Examination_System
         protected global::System.Web.UI.WebControls.DropDownList dd_course;
 
         /// <summary>
-        /// lbl_reg_date control.
+        /// txt_questionText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_reg_date;
+        protected global::System.Web.UI.WebControls.TextBox txt_questionText;
 
         /// <summary>
-        /// lbl_exp_date control.
+        /// txt_A control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_exp_date;
+        protected global::System.Web.UI.WebControls.TextBox txt_A;
+
+        /// <summary>
+        /// txt_B control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_B;
+
+        /// <summary>
+        /// txt_C control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_C;
+
+        /// <summary>
+        /// txt_D control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_D;
+
+        /// <summary>
+        /// dd_answer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dd_answer;
 
         /// <summary>
         /// btn_save control.
@@ -78,12 +96,21 @@ namespace Online_Examination_System
         protected global::System.Web.UI.WebControls.Button btn_save;
 
         /// <summary>
-        /// div_courses control.
+        /// btn_delete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_courses;
+        protected global::System.Web.UI.WebControls.Button btn_delete;
+
+        /// <summary>
+        /// gv_questions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gv_questions;
     }
 }
