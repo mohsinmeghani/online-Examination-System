@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Online_Examination_System {
-    
-    
-    public partial class UserSetup {
-        
+namespace Online_Examination_System
+{
+
+
+    public partial class StudentSetup
+    {
+
         /// <summary>
         /// txt_ID control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_ID;
-        
+
         /// <summary>
         /// txt_username control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_username;
-        
+
         /// <summary>
         /// validator_username control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator validator_username;
-        
+
         /// <summary>
         /// txt_firstname control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_firstname;
-        
+
         /// <summary>
         /// txt_lastname control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_lastname;
-        
+
         /// <summary>
         /// txt_contact control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_contact;
-        
+
         /// <summary>
         /// txt_address control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_address;
-        
+
         /// <summary>
         /// txt_email control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_email;
-        
+
         /// <summary>
         /// ddl_gender control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_gender;
-        
+
         /// <summary>
         /// txt_password control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_password;
-        
+
         /// <summary>
         /// txt_confirmpassword control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_confirmpassword;
-        
+
         /// <summary>
         /// btn_save control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_save;
-        
+
         /// <summary>
         /// btn_delete control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_delete;
-        
+
         /// <summary>
         /// gv_users control.
         /// </summary>

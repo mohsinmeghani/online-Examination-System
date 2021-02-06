@@ -31,7 +31,7 @@ namespace Online_Examination_System
         {
             if (Session["user"] != null)
             {
-                var u = (OES_BAL.Student)Session["user"];
+                var u = (OES_BAL.User)Session["user"];
                 Name = u.FirstName+" "+u.LastName;
                 loginTitle = "Log Out";
                 IsLogin = true;

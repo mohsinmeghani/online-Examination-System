@@ -60,15 +60,6 @@ namespace Online_Examination_System
         protected global::System.Web.UI.HtmlControls.HtmlAnchor p_question;
 
         /// <summary>
-        /// p_exam control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor p_exam;
-
-        /// <summary>
         /// A1 control.
         /// </summary>
         /// <remarks>

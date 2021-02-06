@@ -9,7 +9,7 @@ namespace Online_Examination_System
 {
     public partial class CourseRegistration : System.Web.UI.Page
     {
-        public OES_BAL.Student User { get; set; }
+        public OES_BAL.User User { get; set; }
         public bool IsSuccess { get; set; }
         public bool IsError { get; set; }
         public String SuccessMessage { get; set; }
@@ -163,7 +163,7 @@ namespace Online_Examination_System
             {
 
                 ViewState["IsEditMode"] = false;
-                var u = (OES_BAL.Student)Session["user"];
+                var u = (OES_BAL.User)Session["user"];
                 User = u;
                 ddl_program.Items.Insert(0,new ListItem("[Select Program]", ""));
                 ddl_course_category.Items.Insert(0, new ListItem("[Select Category]", ""));
@@ -200,7 +200,7 @@ namespace Online_Examination_System
             }
             else
             {
-                User = new OES_BAL.Student();
+                User = new OES_BAL.User();
                 Response.Redirect("login.aspx");
             }
         }

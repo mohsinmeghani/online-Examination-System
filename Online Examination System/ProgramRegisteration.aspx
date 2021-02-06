@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Program Registeration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProgramRegisteration.aspx.cs" Inherits="Online_Examination_System.ProgramRegisteration" %>
+﻿    <%@ Page Title="Program Registeration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProgramRegisteration.aspx.cs" Inherits="Online_Examination_System.ProgramRegisteration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -34,23 +34,20 @@
 
 
 
-                    <div class="form-group">
+                  
 
-                        <asp:Label runat="server" AssociatedControlID="lbl_UserID" CssClass="col-md-2 control-label">Student-ID</asp:Label>
-                        <div class="col-md-10">
-                            <asp:Label Name="lbl_UserID" Enabled="false" runat="server" Text="SM-00929" ID="lbl_UserID" CssClass="col-md-5 form-control-static" />
+                     <div class="form-group">
+
+                        <asp:Label runat="server" AssociatedControlID="dd_students" CssClass="col-md-2 control-label">Student Name</asp:Label>
+                        <div class="col-md-5">
+                           <asp:DropDownList runat="server" ID ="dd_students"  CssClass="form-control" AutoPostBack="True">
+                            
+                            </asp:DropDownList>
                         </div>
 
                     </div>
 
-                    <div class="form-group">
-
-                        <asp:Label runat="server" AssociatedControlID="lbl_Name" CssClass="col-md-2 control-label">Student Name</asp:Label>
-                        <div class="col-md-10">
-                            <asp:Label Name="lbl_Name" Enabled="false" runat="server" Text="Ali Karim" ID="lbl_Name" CssClass="col-md-5 form-control-static" />
-                        </div>
-
-                    </div>
+                   
 
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="ddl_program" CssClass="col-md-2 control-label">Program</asp:Label>

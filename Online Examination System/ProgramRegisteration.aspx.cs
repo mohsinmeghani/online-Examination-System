@@ -9,7 +9,7 @@ namespace Online_Examination_System
 {
     public partial class ProgramRegisteration : System.Web.UI.Page
     {
-        public OES_BAL.Student User { get; set; }
+        public OES_BAL.User User { get; set; }
         public bool IsSuccess { get; set; }
         public bool IsError { get; set; }
         public String ErrorMessage { get; set; }
@@ -19,10 +19,11 @@ namespace Online_Examination_System
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            PageLoad();
+           
             if (!Page.IsPostBack)
             {
-                
+                PageLoad();
+
                 LoadDDL();
                 LoadGrid();
                
@@ -34,13 +35,15 @@ namespace Online_Examination_System
             if (Session["user"] != null)
             {
                 ViewState["IsEditMode"] = false;
-                var u = (OES_BAL.Student)Session["user"];
+                var u = (OES_BAL.User)Session["user"];
                 User = u;
+
 
                 var id = Request.QueryString["id"];
 
-                lbl_UserID.Text = User.ID.ToString();
-                lbl_Name.Text = User.FirstName + " " + User.LastName;
+
+                LoadStudents();
+                
                
 
                 if (!string.IsNullOrEmpty(id))
@@ -67,7 +70,7 @@ namespace Online_Examination_System
             }
             else
             {
-                User = new OES_BAL.Student();
+                User = new OES_BAL.User();
                 Response.Redirect("login.aspx");
             }
         }
@@ -131,16 +134,29 @@ namespace Online_Examination_System
         }
 
 
+        private void LoadStudents()
+        {
+            var std = new OES_BAL.Student();
+            var stds = std.GetAll();
+            dd_students.DataSource = stds;
+            dd_students.DataValueField = "ID";
+            dd_students.DataTextField = "FirstName";
+            dd_students.DataBind();
+        }
+
+
         private void Add()
         {
 
             OES_BAL.RegisterProgram rp = new OES_BAL.RegisterProgram();
             rp.Date = DateTime.Now;
-            rp.Student = this.User;
+            var std_id = Convert.ToInt32(dd_students.SelectedValue);
+            rp.Student = new OES_BAL.Student(std_id);
 
-            var user_id = User.ID;
 
-            var is_registered = rp.Get(user_id);
+           
+
+            var is_registered = rp.Get(std_id);
 
             if (is_registered.Programs.Count>0)
             {

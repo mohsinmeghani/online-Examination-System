@@ -7,29 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Online_Examination_System {
-    
-    
-    public partial class ProgramRegisteration {
-        
+namespace Online_Examination_System
+{
+
+
+    public partial class ProgramRegisteration
+    {
+
         /// <summary>
-        /// lbl_UserID control.
+        /// dd_students control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_UserID;
-        
-        /// <summary>
-        /// lbl_Name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Name;
-        
+        protected global::System.Web.UI.WebControls.DropDownList dd_students;
+
         /// <summary>
         /// ddl_program control.
         /// </summary>
@@ -38,7 +31,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_program;
-        
+
         /// <summary>
         /// btn_save control.
         /// </summary>
@@ -47,7 +40,7 @@ namespace Online_Examination_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_save;
-        
+
         /// <summary>
         /// gv_regProgram control.
         /// </summary>

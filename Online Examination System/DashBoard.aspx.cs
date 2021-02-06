@@ -15,7 +15,7 @@ namespace Online_Examination_System
             if (Session["user"]!=null)
             {
                // var user = new  OES_BAL.User();
-                var user= (OES_BAL.Student) Session["user"];
+                var user= (OES_BAL.User) Session["user"];
                 lbl_user.Text = user.FirstName+" "+user.LastName;
 
             }

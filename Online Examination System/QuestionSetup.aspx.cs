@@ -9,7 +9,7 @@ namespace Online_Examination_System
 {
     public partial class QuestionSetup : System.Web.UI.Page
     {
-        public OES_BAL.Student User { get; set; }
+        public OES_BAL.User User { get; set; }
         public bool IsSuccess { get; set; }
         public bool IsError { get; set; }
         public String ErrorMessage { get; set; }
@@ -165,7 +165,7 @@ namespace Online_Examination_System
             if (Session["user"] != null)
             {
                 ViewState["IsEditMode"] = false;
-                var u = (OES_BAL.Student)Session["user"];
+                var u = (OES_BAL.User)Session["user"];
                 User = u;
 
                 LoadCourses();
@@ -206,7 +206,7 @@ namespace Online_Examination_System
             }
             else
             {
-                User = new OES_BAL.Student();
+                User = new OES_BAL.User();
                 Response.Redirect("login.aspx");
             }
         }

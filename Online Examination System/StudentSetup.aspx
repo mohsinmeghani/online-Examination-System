@@ -1,4 +1,4 @@
-﻿<%@ Page Title="User Registeration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserSetup.aspx.cs" Inherits="Online_Examination_System.UserSetup" %>
+﻿<%@ Page Title="Student Registeration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="StudentSetup.aspx.cs" Inherits="Online_Examination_System.StudentSetup" %>
 
 <asp:Content ID="content2" ContentPlaceHolderID="HeadContent" runat="server">
     
@@ -179,7 +179,7 @@ function OnSuccess(response) {
                      BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                     <asp:HyperLinkField  DataTextField="ID" Text="EDIT"
-                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="UserSetup.aspx?acttype=edit&id={0}" />
+                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="StudentSetup.aspx?acttype=edit&id={0}" />
 
                     </Columns>
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
