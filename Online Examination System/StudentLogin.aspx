@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Log in" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Online_Examination_System.Account.Login" Async="true" %>
+﻿<%@ Page Title="Examination Center" Language="C#" MasterPageFile="~/Exam.Master" AutoEventWireup="true" CodeBehind="StudentLogin.aspx.cs" Inherits="Online_Examination_System.Account.StudentLogin" Async="true" %>
 
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
@@ -8,7 +8,7 @@
         <div class="col-md-8">
             <section id="loginForm">
                 <div class="form-horizontal">
-                    <h4>Use a local account to log in.</h4>
+                    <h4>Student Login</h4>
                     <hr />
 <%--                      <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
                         <p class="text-danger">
@@ -57,16 +57,11 @@
 
         <div class="col-md-4">
 
+           
+
             <section id="socialLoginForm">
                 <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
             </section>
-
-            
-             <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:Button name="btn_stdLogin" runat="server" PostBackUrl="~/StudentLogin.aspx" Text="Examination Center" CssClass="btn btn-default" />
-                        </div>
-                    </div>
 
 
         </div>
