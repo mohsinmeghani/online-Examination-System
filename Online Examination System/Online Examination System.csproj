@@ -154,6 +154,7 @@
     <Content Include="About.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
+    <Content Include="Exam.aspx" />
     <Content Include="ExamCenter.aspx" />
     <Content Include="ExamRegisteration.aspx" />
     <Content Include="CourseSetup.aspx" />
@@ -242,6 +243,13 @@
     </Compile>
     <Compile Include="Account\Forgot.aspx.designer.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Exam.aspx.cs">
+      <DependentUpon>Exam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Exam.aspx.designer.cs">
+      <DependentUpon>Exam.aspx</DependentUpon>
     </Compile>
     <Compile Include="ExamCenter.aspx.cs">
       <DependentUpon>ExamCenter.aspx</DependentUpon>

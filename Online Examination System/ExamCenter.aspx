@@ -53,7 +53,7 @@
                            <asp:DropDownList ID="dd_exam" runat="server" CssClass="form-control"></asp:DropDownList>
                          
                         </div>
-                           <asp:Button name="btn_start" runat="server" Text="Start" CssClass="btn btn-success" />
+                           <asp:Button name="btn_start" ID="btn_start" OnClick="btn_start_Click" runat="server" Text="Start" CssClass="btn btn-success" />
                     </div>
                 </div>
             </section>

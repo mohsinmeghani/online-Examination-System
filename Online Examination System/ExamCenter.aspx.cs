@@ -52,7 +52,20 @@ namespace Online_Examination_System
             }
         }
 
+        protected void btn_start_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(dd_exam.SelectedValue))
+            {
+                var exam_id = Convert.ToInt32(dd_exam.SelectedValue);
+                if (exam_id != 0)
+                {
+                    Session["exam"] = new OES_BAL.Exam(exam_id);
+                    Response.Redirect("exam.aspx");
+                }   
+            }
 
-
+           
+            
+        }
     }
 }
