@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Online_Examination_System
 {
-    public partial class CourseRegisteration : System.Web.UI.Page
+    public partial class ExamRegisteration : System.Web.UI.Page
     {
         public OES_BAL.User User { get; set; }
         public bool IsSuccess { get; set; }

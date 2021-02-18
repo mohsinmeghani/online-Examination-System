@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RptDataSet" targetNamespace="http://tempuri.org/RptDataSet.xsd" xmlns:mstns="http://tempuri.org/RptDataSet.xsd" xmlns="http://tempuri.org/RptDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RptDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RptDataSet" msprop:Generator_UserDSName="RptDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="AnswerKey" msprop:Generator_TableClassName="AnswerKeyDataTable" msprop:Generator_TableVarName="tableAnswerKey" msprop:Generator_TablePropName="AnswerKey" msprop:Generator_RowDeletingName="AnswerKeyRowDeleting" msprop:Generator_RowChangingName="AnswerKeyRowChanging" msprop:Generator_RowEvHandlerName="AnswerKeyRowChangeEventHandler" msprop:Generator_RowDeletedName="AnswerKeyRowDeleted" msprop:Generator_UserTableName="AnswerKey" msprop:Generator_RowChangedName="AnswerKeyRowChanged" msprop:Generator_RowEvArgName="AnswerKeyRowChangeEvent" msprop:Generator_RowClassName="AnswerKeyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="QuestionText" msprop:Generator_ColumnVarNameInTable="columnQuestionText" msprop:Generator_ColumnPropNameInRow="QuestionText" msprop:Generator_ColumnPropNameInTable="QuestionTextColumn" msprop:Generator_UserColumnName="QuestionText" type="xs:string" minOccurs="0" />
+              <xs:element name="Answer" msprop:Generator_ColumnVarNameInTable="columnAnswer" msprop:Generator_ColumnPropNameInRow="Answer" msprop:Generator_ColumnPropNameInTable="AnswerColumn" msprop:Generator_UserColumnName="Answer" type="xs:string" minOccurs="0" />
+              <xs:element name="Course" msprop:Generator_ColumnVarNameInTable="columnCourse" msprop:Generator_ColumnPropNameInRow="Course" msprop:Generator_ColumnPropNameInTable="CourseColumn" msprop:Generator_UserColumnName="Course" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

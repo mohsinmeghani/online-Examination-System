@@ -64,8 +64,7 @@ namespace Online_Examination_System
                 }   
             }
 
-           
-            
+     
         }
     }
 }

@@ -103,6 +103,10 @@ E:\DEV\GitHub\online-Examination-System\Online Examination System\obj\Debug\Onli
 C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\Online Examination System\bin\OES_BAL.dll
 C:\Users\mohsin.STC\documents\visual studio 2013\Projects\Online Examination System\Online Examination System\bin\OES_BAL.pdb
 E:\DEV\GitHub\online-Examination-System\Online Examination System\bin\OES_BAL.pdb
+D:\Projects\online-Examination-System\Online Examination System\bin\SqlServerTypes\x64\msvcr100.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\SqlServerTypes\x64\SqlServerSpatial110.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\SqlServerTypes\x86\msvcr100.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\SqlServerTypes\x86\SqlServerSpatial110.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Online Examination System.dll.config
 D:\Projects\online-Examination-System\Online Examination System\bin\Online Examination System.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Online Examination System.pdb
@@ -125,14 +129,48 @@ D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Ow
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.OAuth.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.ReportViewer.Common.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.ReportViewer.DataVisualization.DLL
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.ReportViewer.Design.DLL
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.ReportViewer.WebDesign.DLL
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.ReportViewer.WebForms.DLL
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.ReportViewer.WinForms.DLL
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.ScriptManager.MSAjax.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.SqlServer.Types.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Web.Infrastructure.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Newtonsoft.Json.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\OES_BAL.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Owin.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\System.Web.Optimization.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\System.Web.Providers.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\WebGrease.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\EnvDTE.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.Shell.Interop.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\EnvDTE80.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\stdole.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.OLE.Interop.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.TemplateWizardInterface.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.VSHelp.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.Shell.Interop.10.0.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\VSLangProj.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.Data.Services.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.Data.Core.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\VSLangProj80.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.Debugger.InteropA.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.ComponentModelHost.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.ManagedInterfaces.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.ProjectAggregator.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.MSXML.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Windows.Design.Interaction.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Windows.Design.Extensibility.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\VSLangProj2.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.TextManager.Interop.10.0.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\OES_BAL.pdb
 D:\Projects\online-Examination-System\Online Examination System\bin\OES_BAL.dll.config
 D:\Projects\online-Examination-System\Online Examination System\bin\System.Web.Optimization.xml
@@ -153,9 +191,13 @@ D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Ow
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.TemplateWizardInterface.xml
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Windows.Design.Interaction.xml
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Windows.Design.Extensibility.xml
+D:\Projects\online-Examination-System\Online Examination System\obj\Debug\RdlCompile.cache
+D:\Projects\online-Examination-System\Online Examination System\obj\Debug\RdlCompile.compiled
 D:\Projects\online-Examination-System\Online Examination System\obj\Debug\Online Examination System.csproj.CoreCompileInputs.cache
 D:\Projects\online-Examination-System\Online Examination System\obj\Debug\Online Examination System.csproj.CopyComplete
 D:\Projects\online-Examination-System\Online Examination System\obj\Debug\Online Examination System.dll
 D:\Projects\online-Examination-System\Online Examination System\obj\Debug\Online Examination System.pdb
-D:\Projects\online-Examination-System\Online Examination System\bin\OES_BAL.dll
 D:\Projects\online-Examination-System\Online Examination System\obj\Debug\Online Examination System.csprojAssemblyReference.cache

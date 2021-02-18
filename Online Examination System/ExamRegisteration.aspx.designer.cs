@@ -11,7 +11,7 @@ namespace Online_Examination_System
 {
 
 
-    public partial class CourseRegisteration
+    public partial class ExamRegisteration
     {
 
         /// <summary>

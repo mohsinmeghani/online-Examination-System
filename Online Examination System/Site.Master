@@ -71,7 +71,8 @@
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Student Profile<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="ProgramRegisteration.aspx" id="A1" class="dropdown-item" runat="server">Program Registeration</a></li>
-                            <li><a href="ExamRegisteration.aspx" id="A2" class="dropdown-item" runat="server">Exam Registeration</a></li>
+                            <li><a href="ExamRegisteration.aspx" id="A4" class="dropdown-item" runat="server">Exam Registeration</a></li>
+                            <li><a href="ExamResult.aspx" id="A2" class="dropdown-item" runat="server">Exam Result</a></li>
                         </ul>
                     </li>
 
