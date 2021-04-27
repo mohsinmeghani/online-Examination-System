@@ -264,6 +264,8 @@ namespace Online_Examination_System
 
             std_answer.MarkedAnswers =dt_answers;
             std_answer.Add();
+
+            exam.GenerateResult(dt_answers);
         }
     }
 }

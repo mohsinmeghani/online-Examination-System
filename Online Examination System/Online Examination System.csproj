@@ -66,6 +66,9 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.11.0.1\lib\net20\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="OES_BAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\OES_BAL\bin\Debug\OES_BAL.dll</HintPath>
@@ -111,10 +114,6 @@
     <Reference Include="Antlr3.Runtime">
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <Private>True</Private>
-      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
       <Private>True</Private>
@@ -200,8 +199,9 @@
     <Content Include="ExamRegisteration.aspx" />
     <Content Include="CourseSetup.aspx" />
     <Content Include="DashBoard.aspx" />
-    <Content Include="img\logo.png" />
+    <Content Include="img\logo2.png" />
     <Content Include="Report.aspx" />
+    <Content Include="Report_Simple.aspx" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="StudentLogin.aspx" />
     <Content Include="Login.aspx" />
@@ -360,6 +360,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RptDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Report_Simple.aspx.cs">
+      <DependentUpon>Report_Simple.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report_Simple.aspx.designer.cs">
+      <DependentUpon>Report_Simple.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="StudentLogin.aspx.cs">
       <DependentUpon>StudentLogin.aspx</DependentUpon>
@@ -503,7 +510,8 @@
     <Folder Include="Pages\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Reports\Report1.rdlc" />
+    <EmbeddedResource Include="Reports\AnswerSheet.rdlc" />
+    <EmbeddedResource Include="Reports\StudentCard.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

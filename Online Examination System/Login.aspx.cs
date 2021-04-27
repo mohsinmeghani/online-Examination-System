@@ -5,12 +5,15 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using Online_Examination_System.Models;
+using System.Configuration;
 using OES_BAL;
+
 
 namespace Online_Examination_System.Account
 {
     public partial class Login : Page
     {
+        private String LicenseKey { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             pageLoad();
@@ -18,14 +21,42 @@ namespace Online_Examination_System.Account
 
         protected void LogIn(object sender, EventArgs e)
         {
-
-            login();
+            if (CheckLicense())
+            {
+                login();
+            }
+            else
+            {
+               
+                lable_incorrect.Text = @"License is Invalid / Expired" ;
+            }
+           
         }
 
+        private bool CheckLicense()
+        {
+            try
+            {
+                OES_BAL.License lic = new License(LicenseKey);
+                var is_valid = lic.CheckLicense();
+                return is_valid;
+            }
+            catch (Exception ex)
+            {
+
+                lable_incorrect.Text = ex.Message;
+
+                return false;
+            }
+           
+        }
+
+        
 
 
         private void login()
         {
+           
             OES_BAL.User u = new OES_BAL.User();
             var username = txt_username.Text.Trim();
             var password = txt_password.Text;
@@ -47,9 +78,18 @@ namespace Online_Examination_System.Account
            
         }
 
+        private void ReadLicense()
+        {
+            var license = ConfigurationManager.AppSettings["License"];
+            LicenseKey = license;
+        }
+
         private void pageLoad()
         {
+            ReadLicense();
 
+          
+           
             if (Session["user"]!=null)
             {
                 Response.Redirect("dashboard.aspx");

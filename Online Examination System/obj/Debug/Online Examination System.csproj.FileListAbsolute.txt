@@ -153,9 +153,10 @@ D:\Projects\online-Examination-System\Online Examination System\bin\EnvDTE80.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\stdole.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.OLE.Interop.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.ProjectAggregator.dll
+D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.VSHelp.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.TemplateWizardInterface.dll
-D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.VSHelp.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.Shell.Interop.10.0.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\VSLangProj.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.Data.Services.dll
@@ -165,7 +166,6 @@ D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Vi
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.ComponentModelHost.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.ManagedInterfaces.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.Shell.Interop.9.0.dll
-D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.VisualStudio.ProjectAggregator.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.MSXML.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Windows.Design.Interaction.dll
 D:\Projects\online-Examination-System\Online Examination System\bin\Microsoft.Windows.Design.Extensibility.dll

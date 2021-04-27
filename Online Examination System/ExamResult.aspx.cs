@@ -205,8 +205,28 @@ namespace Online_Examination_System
 
         private void GenerateReport()
         {
-            Response.Redirect("Report.aspx");
-            
+            var rpt = dd_report.SelectedValue;
+            var param = "";
+
+            switch (rpt)
+            {
+                case "IndivisualScore":
+                    var examid = Convert.ToInt32(dd_exam.SelectedValue);
+                    var exam = new OES_BAL.Exam(examid);
+                    param += "rpt=" + rpt + "&cid=" + exam.Course.ID;
+                    break;
+                case "StudentCard":
+                    var stdid = Convert.ToInt32(dd_students.SelectedValue);
+                    param += "rpt=" + rpt + "&stdid=" + stdid;
+                    break;
+
+                default:
+                    break;
+            }
+
+          
+            Response.Redirect("Report_Simple.aspx?"+param);
+
         }
             
     }

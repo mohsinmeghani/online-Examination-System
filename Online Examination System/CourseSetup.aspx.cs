@@ -41,7 +41,7 @@ namespace Online_Examination_System
                     {
                         Add();
                     }
-                    PostCreate();
+                   
                 }
             }
             catch (Exception ex)
@@ -64,9 +64,11 @@ namespace Online_Examination_System
         {
 
 
-            TextBox[] textboxes = { txt_course_code, txt_course_details, txt_course_name };
+            TextBox[] textboxes = { txt_course_code, txt_course_details, txt_course_name, txt_chTheory,txt_chPractical };
             Button[] buttons = { btn_save , btn_delete };
             DropDownList[] dds = {ddl_program,ddl_course_category,ddl_parent_course };
+            
+
 
             //disable Textboxes
             foreach (var textbox in textboxes)
@@ -89,7 +91,7 @@ namespace Online_Examination_System
         {
             OES_BAL.Course c = new OES_BAL.Course();
             var list = c.GetAll();
-            gv_course.DataSource = list;
+            gv_course.DataSource = list.Select(x=>new { x.ID,x.Name}).ToList();
             gv_course.DataBind();
         }
 
@@ -114,11 +116,25 @@ namespace Online_Examination_System
 
         private void Add()
         {
+            
+            if (!int.TryParse(txt_chTheory.Text,out _))
+            {
+                SetError("Credit Hours Theory must be Number");
+                return;
+            }
 
+            if(!int.TryParse(txt_chPractical.Text, out _))
+            {
+                SetError("Credit Hours Practical must be Number");
+                return;
+            }    
             OES_BAL.Course c = new OES_BAL.Course();
             var courseCode = txt_course_code.Text;
             var courseName = txt_course_name.Text;
             var courseDetails = txt_course_details.Text;
+            var ch_theory = Convert.ToInt32(txt_chTheory.Text);
+            var ch_practical = Convert.ToInt32(txt_chPractical.Text);
+
             var p_id = Convert.ToInt16( ddl_program.SelectedValue);
             var cc_id = ddl_course_category.SelectedValue != "" ? Convert.ToInt16(ddl_course_category.SelectedValue) : 0;
 
@@ -126,33 +142,55 @@ namespace Online_Examination_System
             c.Code = courseCode;
             c.Name = courseName;
             c.Details = courseDetails;
+            c.CH_Theory = ch_theory;
+            c.CH_Practical = ch_practical;
             c.Program = new OES_BAL.Program((int)p_id);
             if (cc_id!=0)
             {
                 c.CourseCategory = new OES_BAL.CourseCategory(cc_id);
             }
+
+          
            
 
             c.Add();
 
             txt_id.Text = c.ID.ToString();
+            PostCreate();
         }
 
 
         private void Update()
         {
+            if (!int.TryParse(txt_chTheory.Text, out _))
+            {
+                SetError("Credit Hours Theory must be Number");
+                return;
+            }
+
+            if (!int.TryParse(txt_chPractical.Text, out _))
+            {
+                SetError("Credit Hours Practical must be Number");
+                return;
+            }
+
             var id = Convert.ToInt16(txt_id.Text);
             var code = txt_course_code.Text;
             var name = txt_course_name.Text;
             var details = txt_course_details.Text;
+            var ch_theory = Convert.ToInt32(txt_chTheory.Text);
+            var ch_practical = Convert.ToInt32(txt_chPractical.Text);
             var p_id = Convert.ToInt16(ddl_program.SelectedValue);
 
             var c = new OES_BAL.Course(id);
             c.Code = code;
             c.Name = name;
             c.Details = details;
+            c.CH_Theory = ch_theory;
+            c.CH_Practical = ch_practical;
             c.Program = new OES_BAL.Program(p_id);
             c.Update();
+            PostCreate();
 
 
 
@@ -184,6 +222,8 @@ namespace Online_Examination_System
                             txt_course_code.Text = course.Code;
                             txt_course_name.Text = course.Name;
                             txt_course_details.Text = course.Details;
+                            txt_chTheory.Text = course.CH_Theory.ToString();
+                            txt_chPractical.Text = course.CH_Practical.ToString();
                             ddl_program.SelectedValue = course.Program.ID.ToString();
                             ddl_course_category.SelectedValue = course.CourseCategory!=null?course.CourseCategory.ID.ToString():"";
                             ddl_parent_course.SelectedValue = course.ParentCourse!=null? course.ParentCourse.ID.ToString():"";
