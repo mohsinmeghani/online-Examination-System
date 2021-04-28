@@ -33,7 +33,18 @@
                     
                   
 
-                    
+                      <div class="form-group">
+
+                        <asp:Label runat="server" AssociatedControlID="dd_report" CssClass="col-md-2 control-label">Report</asp:Label>
+                        <div class="col-md-5">
+                           <asp:DropDownList runat="server" ID ="dd_report"   CssClass="form-control" >
+                             <asp:ListItem Text="Indivisual Score Card" Value="IndivisualScore"></asp:ListItem>
+                             <asp:ListItem Text="Student Card" Value="StudentCard"></asp:ListItem>
+                             <asp:ListItem Text="Difficulty and Discrimination" Value="DiffAndDisc"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+
+                    </div>
 
                      <div class="form-group">
                          <asp:Label runat="server" AssociatedControlID="dd_students" CssClass="col-md-2 control-label">Student Name</asp:Label>
@@ -69,17 +80,7 @@
 
                     </div>
 
-                    <div class="form-group">
-
-                        <asp:Label runat="server" AssociatedControlID="dd_report" CssClass="col-md-2 control-label">Report</asp:Label>
-                        <div class="col-md-5">
-                           <asp:DropDownList runat="server" ID ="dd_report"   CssClass="form-control" >
-                             <asp:ListItem Text="Indivisual Score Card" Value="IndivisualScore"></asp:ListItem>
-                             <asp:ListItem Text="Student Card" Value="StudentCard"></asp:ListItem>
-                            </asp:DropDownList>
-                        </div>
-
-                    </div>
+                  
 
 
 

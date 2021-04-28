@@ -15,6 +15,15 @@ namespace Online_Examination_System
     {
 
         /// <summary>
+        /// dd_report control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dd_report;
+
+        /// <summary>
         /// dd_students control.
         /// </summary>
         /// <remarks>
@@ -40,15 +49,6 @@ namespace Online_Examination_System
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList dd_exam;
-
-        /// <summary>
-        /// dd_report control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dd_report;
 
         /// <summary>
         /// btn_generate control.

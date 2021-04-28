@@ -39,6 +39,11 @@ namespace Online_Examination_System
                     dt = obj.GetStudentCard(Convert.ToInt32(stdid));
                     Title = "Student Card Report";
                     break;
+                case "DiffAndDisc":
+                    var course_id = Request.QueryString["cid"];
+                    dt = obj.GetDiffandDisc(Convert.ToInt32( course_id));
+                    Title = "Difficulty and Discrimination";
+                    break;
 
             }
 
@@ -90,10 +95,19 @@ namespace Online_Examination_System
                 HtmlTableRow tr1 = new HtmlTableRow();
                 for (int b = 0; b < dt.Columns.Count; b++)
                 {
-
-                    HtmlTableCell td = new HtmlTableCell();
-                    td.InnerText = dt.Rows[i][b].ToString();
-                    tr1.Cells.Add(td);
+                    var tag = dt.Rows[i][0].ToString() == "Sum" ?"th" : "td";
+                    HtmlTableCell td = new HtmlTableCell(tag);
+                    if (tag == "th" && b == 0)
+                    {
+                        td.Style.Add("text-align","right");
+                        td.BgColor = "yellow";
+                        td.ColSpan = 3;
+                        b = b + 2;
+                    }
+                    
+                        td.InnerText = dt.Rows[i][b].ToString();
+                        tr1.Cells.Add(td);
+                    
                 }
 
                 table_detail.Rows.Add(tr1);
