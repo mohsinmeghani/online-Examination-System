@@ -53,6 +53,15 @@ namespace Online_Examination_System
             Session.Clear();
             Response.Redirect("login.aspx");
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            if (loginTitle== "Log Out")
+            {
+                Session.Clear();
+                Response.Redirect("login.aspx");
+            }
+        }
     }
 
 }

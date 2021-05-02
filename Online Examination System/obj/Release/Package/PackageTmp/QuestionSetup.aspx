@@ -113,6 +113,7 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button ID="btn_save" name="btn_save" runat="server" OnClick="Save" Text="Save" CssClass="btn btn-default" />
+                            <asp:Button ID="btn_refresh" name="btn_refresh" runat="server" OnClick="btn_refresh_Click" Text="Refresh" CssClass="btn btn-default" />
                             <asp:Button ID="btn_delete" name="btn_delete" runat="server" OnClick="btn_delete_Click" Text="Delete" CssClass="btn btn-danger" />
                         </div>
                     </div>
@@ -127,7 +128,7 @@
         <div class="col-md-4">
             <section id="reg_form_gv">
                
-                <div> 
+             
 
                     <asp:GridView ID="gv_questions" CssClass="table table-striped" runat="server" 
                     AllowPaging="True" BorderStyle="None"
@@ -148,10 +149,24 @@
                         <SortedDescendingCellStyle BackColor="#E5E5E5" />
                         <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
-              
-                    </div>
-    
+
+
             </section>
+
+            <div class="form-group">
+
+                <asp:Label runat="server" AssociatedControlID="dd_search_course" CssClass="col-md-2 control-label ">Search</asp:Label>
+                <div class="col-md-7">
+                    <asp:DropDownList runat="server" ID="dd_search_course" CssClass="form-control" AutoPostBack="True">
+                    </asp:DropDownList>
+                </div>
+
+                <div class="col-md-2">
+                     <asp:Button ID="btn_search" name="btn_search" runat="server" OnClick="btn_search_Click" Text="Search" CssClass="btn btn-default" />
+                </div>
+
+            </div>
+
         </div>
 </div>
 </asp:Content>

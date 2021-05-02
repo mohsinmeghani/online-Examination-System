@@ -96,6 +96,15 @@ namespace Online_Examination_System
         protected global::System.Web.UI.WebControls.Button btn_save;
 
         /// <summary>
+        /// btn_refresh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_refresh;
+
+        /// <summary>
         /// btn_delete control.
         /// </summary>
         /// <remarks>
@@ -112,5 +121,23 @@ namespace Online_Examination_System
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gv_questions;
+
+        /// <summary>
+        /// dd_search_course control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dd_search_course;
+
+        /// <summary>
+        /// btn_search control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_search;
     }
 }

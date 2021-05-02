@@ -42,14 +42,24 @@ namespace Online_Examination_System
                 {
                     if ((bool)ViewState["IsEditMode"])
                     {
-                        Update();
+                        if (PreAdd())
+                        {
+                            Update();
+                            PostSave();
+                        }
+                        
                     }
                     else
                     {
-                        Add();
+                        if (PreAdd())
+                        {
+                            Add();
+                            PostSave();
+                        }
+                       
                         
                     }
-                    PostSave();
+                    
                 }
             }
             catch (Exception ex)
@@ -58,6 +68,23 @@ namespace Online_Examination_System
                 SetError(ex.Message);
             }
 
+        }
+
+
+        private bool PreAdd()
+        {
+            var a = txt_A.Text;
+            var b = txt_B.Text;
+            var c = txt_C.Text;
+            var d = txt_D.Text;
+
+            if (string.IsNullOrEmpty(a) || string.IsNullOrEmpty(b) || string.IsNullOrEmpty(c) || string.IsNullOrEmpty(d))
+            {
+                SetError("Please Insert All the Options");
+                return false;
+            }
+
+            return true;
         }
 
         private void Update()
@@ -280,8 +307,32 @@ namespace Online_Examination_System
             dd_course.DataValueField = "ID";
             dd_course.DataBind();
 
+
+            var search_c = obj_course.GetAll();
+            dd_search_course.DataSource = search_c;
+            dd_search_course.DataTextField = "Name";
+            dd_search_course.DataValueField = "ID";
+            dd_search_course.DataBind();
+
         }
 
-       
+        protected void btn_search_Click(object sender, EventArgs e)
+        {
+            search();
+        }
+
+        private void search()
+        {
+            var course_id = Convert.ToInt32(dd_search_course.SelectedValue);
+            OES_BAL.Question q = new OES_BAL.Question();
+            var list = q.GetAll().Where(x => x.Course.ID == course_id).ToList();
+            gv_questions.DataSource = list;
+            gv_questions.DataBind();
+        }
+
+        protected void btn_refresh_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("QuestionSetup.aspx");
+        }
     }
 }

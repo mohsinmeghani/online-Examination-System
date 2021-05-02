@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Program Setup" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProgramSetup.aspx.cs" Inherits="Online_Examination_System.ProgramSetup" %>
+﻿<%@ Page Title="Course Category Setup" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CourseCategorySetup.aspx.cs" Inherits="Online_Examination_System.CourseCategorySetup" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 <div class="row">
@@ -34,40 +34,24 @@
 
                         </div>
                     </div>
-                                    
+                    
                     <div class="form-group">
                         
-                         <asp:Label runat="server" AssociatedControlID="txt_program_code" CssClass="col-md-2 control-label">Program Code</asp:Label>
+                         <asp:Label runat="server" AssociatedControlID="txt_category_name" CssClass="col-md-2 control-label">Category Name</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox Name="txt_program_code" runat="server" ID="txt_program_code" CssClass="form-control" />
-                           <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_program_code"
-                                CssClass="text-danger" ErrorMessage="The Program Code field is required." />
-
+                            <asp:TextBox name="txt_program_name" runat="server" ID="txt_category_name" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_category_name"
+                                CssClass="text-danger" ErrorMessage="The Category Name field is required." />
                         </div>
                     </div>
-                    <div class="form-group">
-                        
-                         <asp:Label runat="server" AssociatedControlID="txt_program_name" CssClass="col-md-2 control-label">Program Name</asp:Label>
-                        <div class="col-md-10">
-                            <asp:TextBox name="txt_program_name" runat="server" ID="txt_program_name" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txt_program_name"
-                                CssClass="text-danger" ErrorMessage="The Program Name field is required." />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                         <asp:Label runat="server" AssociatedControlID="txt_program_details" CssClass="col-md-2 control-label">Program Details</asp:Label>                       
-                        <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="txt_program_details" CssClass="form-control" />
-                           
-                        </div>
-                    </div>
+                    
               
                     
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <asp:Button ID="btn_save" name="btn_save" runat="server" OnClick="Save" Text="Save" CssClass="btn btn-default" />
                             <asp:Button ID="btn_refresh" name="btn_refresh" runat="server" OnClick="btn_refresh_Click" Text="Refresh" CssClass="btn btn-default" />
-                            <asp:Button ID="btn_delete" name="btn_delete" runat="server" OnClick="btn_delete_Click" Text="Delete" CssClass="btn btn-danger" />
+                           
                         </div>
                     </div>
                     <div class="form-group">
@@ -86,11 +70,11 @@
                     <asp:GridView ID="gv_program" CssClass="table table-striped" runat="server" 
                     AllowPaging="True" BorderStyle="None"
                     onpageindexchanging="gv_program_PageIndexChanging" AllowSorting="True" 
-                    onsorting="gv_program_Sorting" 
+                    
                     BackColor="White" BorderColor="#CCCCCC" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
                     <Columns>
                     <asp:HyperLinkField  DataTextField="ID"   Text="EDIT"
-                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="ProgramSetup.aspx?acttype=edit&id={0}" />
+                     HeaderText="Edit Item" DataNavigateUrlFields="ID" DataNavigateUrlFormatString="CourseCategorySetup.aspx?acttype=edit&id={0}" />
 
                     </Columns>
                         <FooterStyle BackColor="#CCCC99" ForeColor="Black" />

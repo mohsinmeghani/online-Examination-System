@@ -69,7 +69,7 @@
 
 
                             <li><a runat="server" onserverclick="Unnamed_ServerClick" href="~/Login"><%: loginTitle %> </a></li>
-                        </ul>
+                                                    </ul>
                     </AnonymousTemplate>
 
                 </asp:LoginView>

@@ -24,81 +24,21 @@
 
 
 
-    <script>
-
-       // alert(decodeURIComponent(document.cookie));
-
-
-        function setCookie(cname, cvalue, hours) {
-            var d = new Date(); 
-            d.setTime(d.getTime() + (hours * 60 * 60 * 1000));
-            var expires = "expires=" + d.toGMTString();
-            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        }
-
-        function getCookie(cname) {
-            var name = cname + "=";
-            var decodedCookie = decodeURIComponent(document.cookie);
-            var ca = decodedCookie.split(';');
-            for (var i = 0; i < ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
-
-        function checkCookie() {
-            var val = getCookie("deadline");
-            if (val != "") {
-                return val;
-            } else {
-                var d = new Date().getTime();
-                var deadline = new Date();
-                deadline.setHours(deadline.getHours() + 1.5);
-                if (deadline != "" && deadline != null) {
-                    setCookie("deadline", deadline, 1);
-                    return deadline;
-                }
-            }
-        }
-
-
-        var deadline = Date.parse( checkCookie());
-
-            var x = setInterval(function () {
-
-                var now = new Date().getTime();
-
-                var diff = deadline - now;
-                var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((diff % (1000 * 60)) / 1000);
-                document.getElementById("demo").innerHTML = hours + ":" + minutes + ":" + seconds;
-
-                if (diff < 0) {
-                    clearInterval(x);
-                    document.getElementById("demo").innerHTML = "EXPIRED";
-                    document.getElementById("<%= btn_submit.ClientID %>").click();
-                }
-
-
-            }, 1000);
-            
-            //document.getElementById("demo1").innerHTML = deadline.toLocaleTimeString();
-        
-    </script>
-   
+ 
+    
 
 
     <div class="row">
         <div class="col-md-5">
             <label>Time:</label>
-            <label id="demo">00:00:00</label>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                       <%-- <label id="demo">00:00:00</label>--%>
+                      <asp:Label ID="lbl_time" runat="server" Text="00:00:00"></asp:Label>
+                        <asp:Timer ID="Timer1" OnTick="Timer1_Tick" runat="server" Interval="1000"></asp:Timer>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            
             
              
 
@@ -129,8 +69,10 @@
 
     <div class="row" style="margin-top:25px;text-align:right">
         <div class="col-md-12">
+            <asp:Button ID="btn_first" name="btn_prev" OnClick="btn_first_Click" runat="server" Text="First" CssClass="btn btn-primary"   />
              <asp:Button ID="btn_prev" name="btn_prev" OnClick="btn_prev_Click" runat="server" Text="Previous" CssClass="btn btn-primary"   />
              <asp:Button ID="btn_next" name="btn_next" OnClick="btn_next_Click"  runat="server" Text="Next" CssClass="btn btn-primary"   />
+             <asp:Button ID="btn_last" name="btn_last" OnClick="btn_last_Click"  runat="server" Text="Last" CssClass="btn btn-primary"   />
              
         </div>
     </div>

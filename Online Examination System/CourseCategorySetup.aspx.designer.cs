@@ -11,7 +11,7 @@ namespace Online_Examination_System
 {
 
 
-    public partial class ProgramSetup
+    public partial class CourseCategorySetup
     {
 
         /// <summary>
@@ -24,31 +24,13 @@ namespace Online_Examination_System
         protected global::System.Web.UI.WebControls.TextBox txt_id;
 
         /// <summary>
-        /// txt_program_code control.
+        /// txt_category_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_program_code;
-
-        /// <summary>
-        /// txt_program_name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_program_name;
-
-        /// <summary>
-        /// txt_program_details control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_program_details;
+        protected global::System.Web.UI.WebControls.TextBox txt_category_name;
 
         /// <summary>
         /// btn_save control.
@@ -67,15 +49,6 @@ namespace Online_Examination_System
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_refresh;
-
-        /// <summary>
-        /// btn_delete control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_delete;
 
         /// <summary>
         /// gv_program control.

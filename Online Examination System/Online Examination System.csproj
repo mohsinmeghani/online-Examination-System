@@ -200,6 +200,7 @@
     <Content Include="CourseSetup.aspx" />
     <Content Include="DashBoard.aspx" />
     <Content Include="img\logo2.png" />
+    <Content Include="CourseCategorySetup.aspx" />
     <Content Include="Report.aspx" />
     <Content Include="Report_Simple.aspx" />
     <Content Include="SqlServerTypes\readme.htm" />
@@ -347,6 +348,13 @@
     </Compile>
     <Compile Include="Exam.Master.designer.cs">
       <DependentUpon>Exam.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CourseCategorySetup.aspx.cs">
+      <DependentUpon>CourseCategorySetup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseCategorySetup.aspx.designer.cs">
+      <DependentUpon>CourseCategorySetup.aspx</DependentUpon>
     </Compile>
     <Compile Include="Report.aspx.cs">
       <DependentUpon>Report.aspx</DependentUpon>

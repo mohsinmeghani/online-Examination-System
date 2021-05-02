@@ -368,5 +368,9 @@ namespace Online_Examination_System
             }
         }
 
+        protected void btn_refresh_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("StudentSetup.aspx");
+        }
     }
 }

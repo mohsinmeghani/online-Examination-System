@@ -229,16 +229,22 @@ namespace Online_Examination_System
 
             try
             {
-                var u_id = Convert.ToInt32(dd_students.SelectedValue);
+                var s_id = Convert.ToInt32(dd_students.SelectedValue);
                 var p_id = Convert.ToInt32(dd_program.SelectedValue);
                 var cc_id = Convert.ToInt32(ddl_CourseCategory.SelectedValue);
                 var c_id = Convert.ToInt32(dd_course.SelectedValue);
 
 
-                if (u_id!=0 && p_id!=0 && cc_id!=0 && c_id!=0)
+                if (s_id != 0 && p_id!=0 && cc_id!=0 && c_id!=0)
                 {
                     var exam = new OES_BAL.Exam();
-                    exam.Student = new OES_BAL.Student(u_id);
+
+                    if (exam.isExist(c_id,s_id))
+                    {
+                        SetError("Exam Already Registered");
+                        return;
+                    }
+                    exam.Student = new OES_BAL.Student(s_id);
                     exam.Course = new OES_BAL.Course(c_id);
                     exam.Registeration_Date = Convert.ToDateTime(lbl_reg_date.Text);
                     exam.Expiration_Date = Convert.ToDateTime(lbl_exp_date.Text);

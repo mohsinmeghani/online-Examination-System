@@ -62,7 +62,8 @@
                         <ul class="dropdown-menu">
                             <li><a href="StudentSetup.aspx" id="p_program" class="dropdown-item" runat="server">Student</a></li>
                             <li><a href="ProgramSetup.aspx" id="p_user" class="dropdown-item" runat="server">Program</a></li>
-                            <li><a href="CourseSetup.aspx" id="A3" class="dropdown-item" runat="server">Course</a></li>
+                            <li><a href="CourseSetup.aspx" id="A5" class="dropdown-item" runat="server">Course</a></li>
+                            <li><a href="CourseCategorySetup.aspx" id="A3" class="dropdown-item" runat="server">Course Category</a></li>
                             <li><a href="QuestionSetup.aspx" id="p_question" class="dropdown-item" runat="server">Question</a></li>
                             
                         </ul>
@@ -90,8 +91,8 @@
 
                             <% } %>
 
-
-                            <li><a runat="server" onserverclick="Unnamed_ServerClick" href="~/Login"><%: loginTitle %> </a></li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton1" OnClick="LinkButton1_Click"  CausesValidation="false"  runat="server"><%: loginTitle %></asp:LinkButton></li>
                         </ul>
                     </AnonymousTemplate>
 

@@ -11,14 +11,16 @@ namespace Online_Examination_System
 {
     public partial class Exam : System.Web.UI.Page
     {
-        
-        
+       
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
             
             if (!Page.IsPostBack)
             {
+                var date = DateTime.Now;
+                ViewState["deadline"]= date.AddHours(2);
                 Generate_DT();
                 InitCounter();
                 First();
@@ -43,6 +45,7 @@ namespace Online_Examination_System
 
         private void First()
         {
+            ViewState["counter"] = 1;
             Display(1);
         }
 
@@ -50,6 +53,7 @@ namespace Online_Examination_System
         {
             var dt = (DataTable)ViewState["dt"];
             var last = dt.Rows.Count -1;
+            ViewState["counter"] = last;
             Display(last);
 
 
@@ -266,6 +270,47 @@ namespace Online_Examination_System
             std_answer.Add();
 
             exam.GenerateResult(dt_answers);
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+           lbl_time.Text=  GetTime();
+        // lbl_time.Text= DateTime.Now.ToString("hh:mm:ss tt");
+        }
+
+
+        private string GetTime()
+        {
+            var date = DateTime.Now;
+            var deadline = (DateTime)ViewState["deadline"];
+            var diff = deadline - date;
+
+            var hours = diff.Hours;
+            var mins = diff.Minutes;
+            var secs = diff.Seconds;
+
+            if (hours <= 0 && mins<=0 && secs<=0)
+            {
+                Timer1.Enabled = false;
+                SubmitExam();
+                Response.Redirect("ExamCenter.aspx");
+                //return;
+            }
+
+            return hours.ToString() + ":" + mins.ToString() + ":" + secs.ToString();
+
+        }
+
+        protected void btn_last_Click(object sender, EventArgs e)
+        {
+            panel.Controls.Clear();
+            Last();
+        }
+
+        protected void btn_first_Click(object sender, EventArgs e)
+        {
+            panel.Controls.Clear();
+            First();
         }
     }
 }
